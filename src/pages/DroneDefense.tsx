@@ -56,7 +56,7 @@ const timeline = [
 
 const ARTICLE_IMAGE_CONTAINER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/3a6be58e-27d2-4a3f-90e4-a55bceaca0b2.jpg";
 const ARTICLE_IMAGE_TOWER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/7179b1b9-728d-4691-a8aa-ff702eec9b20.jpg";
-const ROOF_FIRE_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/6cd525aa-c58e-4826-918c-0fbf46f07278.jpg";
+const ROOF_FIRE_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/ee252ab6-ea51-4f7c-9fa7-bc2ef1b2ef75.jpg";
 const ARTICLE_IMAGE_CONTROL = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/e6107543-2a75-4a14-8e1e-57f36dacf401.jpg";
 
 const droneFaqs = [
