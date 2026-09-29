@@ -259,7 +259,7 @@ export default function DroneDefense() {
             Активная защита от дроновой атаки для объектов с угрозой БПЛА
           </div>
           <h1 className={`font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6 ${heroObs.inView ? "animate-fade-in-up delay-100" : "opacity-0"}`}>
-            Активная защита кровли от пожара: <span className="text-[var(--blue-light)]">тушение крыши за 3 минуты</span>
+            Активная защита кровли от пожара. <span className="text-[var(--blue-light)]">Мы готовы тушить кровлю уже через три минуты</span>
           </h1>
           <p className={`text-base sm:text-lg text-white/85 font-medium leading-relaxed mb-8 max-w-3xl mx-auto ${heroObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
             Автономная контейнерная установка для тушения крыши вступает в борьбу с огнём после падения БПЛА в считанные минуты — без зависимости от электросети и несущих конструкций объекта.
