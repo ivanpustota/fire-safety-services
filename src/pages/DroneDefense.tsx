@@ -145,7 +145,6 @@ export default function DroneDefense() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [articleOpen, setArticleOpen] = useState(false);
   const [callbackOpen, setCallbackOpen] = useState(false);
   const [callbackPhone, setCallbackPhone] = useState("");
   const [callbackState, setCallbackState] = useState<FormState>("idle");
@@ -296,62 +295,39 @@ export default function DroneDefense() {
               Наша компания представляет новый подход к устранению последствий пожаров, вызванных падением БПЛА. Мы разработали автономную установку пожаротушения контейнерного типа, способную вступить в борьбу с огнём на крыше в считанные минуты.
             </p>
 
-            {!articleOpen && (
-              <div className="text-center mt-6">
-                <button
-                  onClick={() => setArticleOpen(true)}
-                  className="inline-flex items-center gap-2 text-[var(--blue)] font-semibold hover:gap-3 transition-all"
-                >
-                  Читать полностью
-                  <Icon name="ChevronDown" size={18} />
-                </button>
-              </div>
-            )}
-
-            {articleOpen && (
-              <div className="mt-4 animate-fade-in-up">
-                {articleSections.map((s, i) => (
-                  <div key={i} className="mt-10 pt-10 border-t border-gray-100 first:mt-6 first:pt-0 first:border-0">
-                    <h3 className="font-display font-bold text-xl sm:text-2xl text-[var(--dark)] mb-4">{s.title}</h3>
-                    {s.image && (
-                      <div className="rounded-xl overflow-hidden mb-5 max-h-64">
-                        <img src={s.image} alt={s.imageAlt} className="w-full h-64 object-cover" />
-                      </div>
-                    )}
-                    {s.paragraphs?.map((p, pi) => (
-                      <p key={pi} className="text-[var(--gray)] leading-relaxed mb-4">{p}</p>
-                    ))}
-                    {s.list && (
-                      <div className="mb-2">
-                        {s.list.title && <div className="font-display font-semibold text-[var(--dark)] mb-3">{s.list.title}</div>}
-                        <ul className="space-y-3">
-                          {s.list.items.map((item, li) => (
-                            <li key={li} className="flex items-start gap-3">
-                              <div className="w-6 h-6 bg-[var(--blue-50)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <Icon name="Check" size={14} className="text-[var(--blue)]" />
-                              </div>
-                              <span className="text-[var(--gray)] text-sm leading-relaxed">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    {s.footer && (
-                      <p className="text-[var(--gray)] leading-relaxed mt-4 border-l-2 border-[var(--blue)] pl-4">{s.footer}</p>
-                    )}
-                  </div>
-                ))}
-                <div className="text-center mt-10">
-                  <button
-                    onClick={() => setArticleOpen(false)}
-                    className="inline-flex items-center gap-2 text-[var(--blue)] font-semibold hover:gap-3 transition-all"
-                  >
-                    Свернуть статью
-                    <Icon name="ChevronUp" size={18} />
-                  </button>
+            <div className="mt-4">
+              {articleSections.map((s, i) => (
+                <div key={i} className="mt-10 pt-10 border-t border-gray-100 first:mt-6 first:pt-0 first:border-0">
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-[var(--dark)] mb-4">{s.title}</h3>
+                  {s.image && (
+                    <div className="rounded-xl overflow-hidden mb-5 max-h-64">
+                      <img src={s.image} alt={s.imageAlt} className="w-full h-64 object-cover" />
+                    </div>
+                  )}
+                  {s.paragraphs?.map((p, pi) => (
+                    <p key={pi} className="text-[var(--gray)] leading-relaxed mb-4">{p}</p>
+                  ))}
+                  {s.list && (
+                    <div className="mb-2">
+                      {s.list.title && <div className="font-display font-semibold text-[var(--dark)] mb-3">{s.list.title}</div>}
+                      <ul className="space-y-3">
+                        {s.list.items.map((item, li) => (
+                          <li key={li} className="flex items-start gap-3">
+                            <div className="w-6 h-6 bg-[var(--blue-50)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <Icon name="Check" size={14} className="text-[var(--blue)]" />
+                            </div>
+                            <span className="text-[var(--gray)] text-sm leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {s.footer && (
+                    <p className="text-[var(--gray)] leading-relaxed mt-4 border-l-2 border-[var(--blue)] pl-4">{s.footer}</p>
+                  )}
                 </div>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
         </div>
       </section>
