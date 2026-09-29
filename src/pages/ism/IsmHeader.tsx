@@ -37,6 +37,9 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
           <Link to="/uslugi" className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
             Услуги
           </Link>
+          <Link to="/drone-defense" className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
+            Защита от БПЛА
+          </Link>
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
               {l.label}
@@ -72,6 +75,9 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl">
           <Link to="/uslugi" onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
             Услуги
+          </Link>
+          <Link to="/drone-defense" onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
+            Защита от БПЛА
           </Link>
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">

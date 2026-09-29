@@ -209,6 +209,9 @@ export default function IsmContactsFooter({
                 <li>
                   <Link to="/uslugi" reloadDocument className="text-gray-400 text-sm hover:text-[var(--blue-light)] transition-colors">Услуги</Link>
                 </li>
+                <li>
+                  <Link to="/drone-defense" reloadDocument className="text-gray-400 text-sm hover:text-[var(--blue-light)] transition-colors">Защита от БПЛА</Link>
+                </li>
                 {navLinks.map((l) => (
                   <li key={l.href}>
                     <a href={l.href} className="text-gray-400 text-sm hover:text-[var(--blue-light)] transition-colors">{l.label}</a>

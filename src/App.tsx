@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Ism from "./pages/Ism";
+import DroneDefense from "./pages/DroneDefense";
 import PageNotFound from "./pages/PageNotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/ism" element={<Navigate to="/" replace />} />
             <Route path="/montazh" element={<Index />} />
             <Route path="/uslugi" element={<Index />} />
+            <Route path="/drone-defense" element={<DroneDefense />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<PageNotFound />} />
           </Routes>
