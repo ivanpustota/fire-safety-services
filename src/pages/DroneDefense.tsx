@@ -54,8 +54,8 @@ const timeline = [
   { icon: "Repeat", title: "Пополнение", desc: "Патрубки позволяют пополнить запас из гидранта, скважины или водоёма" },
 ];
 
-const ARTICLE_IMAGE_CONTAINER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/dafed340-aabf-44e9-bb3b-55d19d2435b7.jpg";
-const ARTICLE_IMAGE_TOWER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/54093c5d-2949-4e4a-9a03-6d2c159ecac9.jpg";
+const ARTICLE_IMAGE_CONTAINER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/3a6be58e-27d2-4a3f-90e4-a55bceaca0b2.jpg";
+const ARTICLE_IMAGE_TOWER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/7179b1b9-728d-4691-a8aa-ff702eec9b20.jpg";
 const ARTICLE_IMAGE_CONTROL = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/e6107543-2a75-4a14-8e1e-57f36dacf401.jpg";
 
 const droneFaqs = [
