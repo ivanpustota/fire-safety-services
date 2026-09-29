@@ -23,7 +23,7 @@ export default function IsmDroneDefensePromo({ obs }: { obs: InViewObs }) {
               Активная защита от дроновой атаки
             </div>
             <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-white leading-[1.15] mb-5">
-              Активная защита кровли от пожара: тушение крыши за 3 минуты
+              Активная защита кровли от БПЛА и пожара: тушение крыши когда еще не поздно
             </h2>
             <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl">
               Автономная контейнерная установка для тушения крыши подаёт воду в очаг возгорания после падения БПЛА за 3 минуты — без зависимости от электросети и несущих конструкций здания.
