@@ -82,42 +82,42 @@ export default function DroneDefense() {
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       <Helmet>
-        <title>Активная защита кровли от БПЛА — установка пожаротушения | ПожДозор</title>
+        <title>Активная защита кровли от БПЛА: тушение крыши за 3 минуты | ПожДозор</title>
         <meta
           name="description"
-          content="Автономная контейнерная установка пожаротушения для защиты кровли от последствий падения БПЛА. Подача воды за 3 минуты, дальность струи до 80 метров, полная энергонезависимость."
+          content="Активная защита кровли от пожара и последствий дроновой атаки. Автономная установка для тушения крыши: подача воды за 3 минуты, дальность струи до 80 метров, без зависимости от электросети."
         />
         <meta
           name="keywords"
-          content="защита кровли от БПЛА, пожаротушение при падении беспилотника, автономная установка пожаротушения, контейнерная насосная станция, лафетный ствол пожаротушения, защита склада от дрона, пожарная вышка гидромонитор, тушение пожара на крыше склада"
+          content="активная защита кровли от пожара, тушение крыши, тушение пожара на крыше склада, активная защита от дроновой атаки, защита кровли от БПЛА, пожаротушение при падении беспилотника, автономная установка пожаротушения, контейнерная насосная станция, лафетный ствол пожаротушения, защита склада от дрона, пожарная вышка гидромонитор"
         />
         <link rel="canonical" href="https://pozhdozor.ru/drone-defense" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:url" content="https://pozhdozor.ru/drone-defense" />
-        <meta property="og:title" content="Активная защита кровли от БПЛА — установка пожаротушения | ПожДозор" />
+        <meta property="og:title" content="Активная защита кровли от БПЛА: тушение крыши за 3 минуты | ПожДозор" />
         <meta
           property="og:description"
-          content="Автономная контейнерная установка пожаротушения защищает кровлю от последствий падения БПЛА. Подача воды за 3 минуты, дальность струи до 80 метров."
+          content="Активная защита кровли от пожара и последствий дроновой атаки. Тушение крыши за 3 минуты, дальность струи до 80 метров, полная энергонезависимость."
         />
         <meta property="og:image" content={HERO_IMAGE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Контейнерная установка пожаротушения для защиты кровли от БПЛА" />
+        <meta property="og:image:alt" content="Активная защита кровли от БПЛА — установка для тушения крыши" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Активная защита кровли от БПЛА | ПожДозор" />
+        <meta name="twitter:title" content="Активная защита кровли от БПЛА: тушение крыши за 3 минуты | ПожДозор" />
         <meta
           name="twitter:description"
-          content="Автономная контейнерная установка пожаротушения. Подача воды за 3 минуты, дальность струи до 80 метров."
+          content="Активная защита кровли от пожара и дроновой атаки. Тушение крыши за 3 минуты, дальность струи до 80 метров."
         />
         <meta name="twitter:image" content={HERO_IMAGE} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Активная защита кровли от последствий падения БПЛА",
+            name: "Активная защита кровли от пожара и дроновой атаки",
             description:
-              "Автономная контейнерная установка пожаротушения для объектов с угрозой БПЛА. Подача воды в очаг возгорания на кровле за 3 минуты, дальность струи 60–80 метров, полная энергонезависимость за счёт дизельного насоса.",
+              "Автономная контейнерная установка для тушения крыши — активная защита кровли от последствий падения БПЛА и возгорания. Подача воды в очаг за 3 минуты, дальность струи 60–80 метров, полная энергонезависимость за счёт дизельного насоса.",
             provider: {
               "@type": "LocalBusiness",
               name: "ПожДозор",
@@ -151,13 +151,13 @@ export default function DroneDefense() {
         <div ref={heroObs.ref} className="relative z-10 w-full max-w-5xl mx-auto px-4 lg:px-8 py-16 text-center">
           <div className={`inline-flex items-center gap-2 px-4 py-2 bg-red-500/15 border border-red-500/40 rounded-full text-red-300 text-sm font-medium mb-6 ${heroObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
             <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-            Новое решение для объектов с угрозой БПЛА
+            Активная защита от дроновой атаки для объектов с угрозой БПЛА
           </div>
           <h1 className={`font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6 ${heroObs.inView ? "animate-fade-in-up delay-100" : "opacity-0"}`}>
-            Активная защита кровли от <span className="text-[var(--blue-light)]">последствий падения БПЛА</span>
+            Активная защита кровли от пожара: <span className="text-[var(--blue-light)]">тушение крыши за 3 минуты</span>
           </h1>
           <p className={`text-base sm:text-lg text-white/85 font-medium leading-relaxed mb-8 max-w-3xl mx-auto ${heroObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-            Автономная контейнерная установка пожаротушения вступает в борьбу с огнём на крыше здания в считанные минуты — без зависимости от электросети и несущих конструкций объекта.
+            Автономная контейнерная установка для тушения крыши вступает в борьбу с огнём после падения БПЛА в считанные минуты — без зависимости от электросети и несущих конструкций объекта.
           </p>
           <div className={`flex flex-col sm:flex-row gap-3 justify-center ${heroObs.inView ? "animate-fade-in-up delay-300" : "opacity-0"}`}>
             <a href="#contacts" className="px-6 py-3.5 bg-[var(--blue)] text-white font-bold rounded-xl hover:bg-[var(--blue-dark)] transition-all text-center text-base">
@@ -179,9 +179,9 @@ export default function DroneDefense() {
               Архитектура защиты
               <div className="section-divider w-8" />
             </div>
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[var(--dark)] mb-4">Вышки и лафетные стволы</h2>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[var(--dark)] mb-4">Вышки и лафетные стволы для тушения крыши</h2>
             <p className="text-[var(--gray)] max-w-2xl mx-auto">
-              В отличие от традиционных систем, где вода подаётся изнутри здания, мы выносим противопожарную систему наружу. По периметру объекта устанавливаются специальные вышки с гидромониторами.
+              В отличие от традиционных систем, где вода подаётся изнутри здания, мы выносим противопожарную систему наружу — так реализуется активная защита кровли от пожара. По периметру объекта устанавливаются специальные вышки с гидромониторами.
             </p>
           </div>
           <div className={`rounded-2xl overflow-hidden shadow-xl ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>

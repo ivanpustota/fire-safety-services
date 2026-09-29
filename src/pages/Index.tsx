@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Icon from "@/components/ui/icon";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { testimonials } from "@/pages/ism/ism.data";
+
+const DRONE_DEFENSE_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/74ad597d-1e4c-406e-88f0-c01abf068a6f.png";
 
 const VkIcon = ({ size = 16, className = "" }: { size?: number; className?: string }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -253,6 +255,10 @@ export default function Index() {
         <meta
           name="description"
           content="Монтаж, техническое обслуживание и круглосуточный мониторинг пожарной сигнализации, видеонаблюдения и СКУД в Москве. Лицензия МЧС России, выезд инженера — бесплатно."
+        />
+        <meta
+          name="keywords"
+          content="монтаж пожарной сигнализации, обслуживание пожарной сигнализации, активная защита кровли от пожара, тушение крыши, активная защита от дроновой атаки, защита кровли от БПЛА"
         />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
@@ -644,6 +650,40 @@ export default function Index() {
                 </div>
               </div>
             ))}
+
+            <div className="bg-[#0a1628] rounded-2xl border-2 border-[var(--blue)]/30 card-hover overflow-hidden">
+              <div className="relative h-40 overflow-hidden">
+                <img src={DRONE_DEFENSE_IMAGE} alt="Активная защита кровли от БПЛА — тушение пожара на крыше склада" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-3 left-3">
+                  <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+                    <Icon name="Siren" size={16} className="text-white" />
+                  </div>
+                </div>
+                <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                  Новинка
+                </div>
+              </div>
+              <div className="p-5">
+                <h3 className="font-display font-bold text-lg text-white mb-2">Активная защита кровли от БПЛА</h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-4">
+                  Автономная установка для тушения пожара на крыше и защиты кровли от последствий дроновой атаки. Подача воды за 3 минуты, дальность струи до 80 метров.
+                </p>
+                <ul className="space-y-1 mb-4">
+                  {["Активная защита от дроновой атаки", "Тушение крыши без электросети", "Дальность струи 60–80 м"].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-white/60">
+                      <div className="w-1.5 h-1.5 bg-[var(--blue-light)] rounded-full flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-3 border-t border-white/10">
+                  <Link to="/drone-defense" className="text-[var(--blue-light)] text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                    Подробнее о системе <Icon name="ArrowRight" size={14} />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
