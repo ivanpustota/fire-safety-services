@@ -56,6 +56,7 @@ const timeline = [
 
 const ARTICLE_IMAGE_CONTAINER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/3a6be58e-27d2-4a3f-90e4-a55bceaca0b2.jpg";
 const ARTICLE_IMAGE_TOWER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/7179b1b9-728d-4691-a8aa-ff702eec9b20.jpg";
+const ROOF_FIRE_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/0bccd62e-0fda-4660-af54-2482df42ff4e.jpg";
 const ARTICLE_IMAGE_CONTROL = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/e6107543-2a75-4a14-8e1e-57f36dacf401.jpg";
 
 const droneFaqs = [
@@ -348,6 +349,9 @@ export default function DroneDefense() {
           </div>
           <div className={`rounded-2xl overflow-hidden shadow-xl ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
             <img src={TOWER_IMAGE} alt="Пожарная вышка с лафетным стволом для защиты кровли склада от возгорания" className="w-full h-auto object-cover" />
+          </div>
+          <div className={`rounded-2xl overflow-hidden shadow-xl mt-6 ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+            <img src={ROOF_FIRE_IMAGE} alt="Тушение пожара на кровле склада лафетным стволом с пожарной вышки" className="w-full h-auto object-cover" />
           </div>
           <div className={`grid sm:grid-cols-2 gap-4 mt-8 ${architectureObs.inView ? "animate-fade-in-up delay-300" : "opacity-0"}`}>
             <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-100">
