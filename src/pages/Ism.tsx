@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { FormState } from "./ism/ism.data";
 import IsmHeader from "./ism/IsmHeader";
 import IsmHeroSections from "./ism/IsmHeroSections";
+import IsmDroneDefensePromo from "./ism/IsmDroneDefensePromo";
 import IsmAboutSections from "./ism/IsmAboutSections";
 import IsmContactsFooter from "./ism/IsmContactsFooter";
 
@@ -51,6 +52,7 @@ export default function Ism() {
   const certsObs = useInView(0.1);
   const faqObs = useInView(0.1);
   const contactsObs = useInView(0.1);
+  const droneObs = useInView(0.1);
 
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
@@ -74,6 +76,7 @@ export default function Ism() {
         resultsObs={resultsObs}
         tariffsObs={tariffsObs}
       />
+      <IsmDroneDefensePromo obs={droneObs} />
       <IsmAboutSections
         aboutObs={aboutObs}
         portfolioObs={portfolioObs}

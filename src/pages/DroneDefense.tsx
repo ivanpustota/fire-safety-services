@@ -87,7 +87,54 @@ export default function DroneDefense() {
           name="description"
           content="Автономная контейнерная установка пожаротушения для защиты кровли от последствий падения БПЛА. Подача воды за 3 минуты, дальность струи до 80 метров, полная энергонезависимость."
         />
+        <meta
+          name="keywords"
+          content="защита кровли от БПЛА, пожаротушение при падении беспилотника, автономная установка пожаротушения, контейнерная насосная станция, лафетный ствол пожаротушения, защита склада от дрона, пожарная вышка гидромонитор, тушение пожара на крыше склада"
+        />
         <link rel="canonical" href="https://pozhdozor.ru/drone-defense" />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:url" content="https://pozhdozor.ru/drone-defense" />
+        <meta property="og:title" content="Активная защита кровли от БПЛА — установка пожаротушения | ПожДозор" />
+        <meta
+          property="og:description"
+          content="Автономная контейнерная установка пожаротушения защищает кровлю от последствий падения БПЛА. Подача воды за 3 минуты, дальность струи до 80 метров."
+        />
+        <meta property="og:image" content={HERO_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Контейнерная установка пожаротушения для защиты кровли от БПЛА" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Активная защита кровли от БПЛА | ПожДозор" />
+        <meta
+          name="twitter:description"
+          content="Автономная контейнерная установка пожаротушения. Подача воды за 3 минуты, дальность струи до 80 метров."
+        />
+        <meta name="twitter:image" content={HERO_IMAGE} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Активная защита кровли от последствий падения БПЛА",
+            description:
+              "Автономная контейнерная установка пожаротушения для объектов с угрозой БПЛА. Подача воды в очаг возгорания на кровле за 3 минуты, дальность струи 60–80 метров, полная энергонезависимость за счёт дизельного насоса.",
+            provider: {
+              "@type": "LocalBusiness",
+              name: "ПожДозор",
+              telephone: "+74994902201",
+              email: "skpb01@mail.ru",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "ул. 5-я Магистральная, дом 12, офис 410",
+                addressLocality: "Москва",
+                addressCountry: "RU",
+              },
+            },
+            areaServed: "Москва",
+            image: HERO_IMAGE,
+            url: "https://pozhdozor.ru/drone-defense",
+          })}
+        </script>
       </Helmet>
 
       <IsmHeader
