@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Icon from "@/components/ui/icon";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { testimonials } from "@/pages/ism/ism.data";
@@ -241,8 +243,19 @@ export default function Index() {
   const faqObs = useInView(0.1);
   const contactsObs = useInView(0.1);
 
+  const { pathname } = useLocation();
+  const canonicalUrl = `https://pozhdozor.ru${pathname === "/" ? "" : pathname}`;
+
   return (
     <div className="min-h-screen bg-white font-body">
+      <Helmet>
+        <title>Услуги пожарной безопасности: монтаж, ТО, мониторинг | ПожДозор</title>
+        <meta
+          name="description"
+          content="Монтаж, техническое обслуживание и круглосуточный мониторинг пожарной сигнализации, видеонаблюдения и СКУД в Москве. Лицензия МЧС России, выезд инженера — бесплатно."
+        />
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
       {/* NAVBAR */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -756,7 +769,7 @@ export default function Index() {
 
           <div className="grid lg:grid-cols-2 gap-10 items-stretch">
             <div className={`${certsObs.inView ? "animate-fade-in-left" : "opacity-0"}`}>
-              <img src={CERT_IMAGE} alt="Сертификаты" className="rounded-2xl w-full h-full object-cover object-top shadow-xl" style={{minHeight: "340px"}} />
+              <img src={CERT_IMAGE} alt="Лицензии и сертификаты МЧС России компании ПожДозор" className="rounded-2xl w-full h-full object-cover object-top shadow-xl" style={{minHeight: "340px"}} />
             </div>
             <div className="grid grid-cols-1 gap-4 content-start">
               {certificates.map((c, i) => (

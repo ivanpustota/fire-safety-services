@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { FormState } from "./ism/ism.data";
 import IsmHeader from "./ism/IsmHeader";
 import IsmHeroSections from "./ism/IsmHeroSections";
@@ -53,6 +54,14 @@ export default function Ism() {
 
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
+      <Helmet>
+        <title>Круглосуточный мониторинг пожарной безопасности | ПожДозор Москва</title>
+        <meta
+          name="description"
+          content="ПожДозор — мониторинг, обслуживание и ремонт пожарной безопасности 24/7 в Москве. Реакция за 5 минут, 1200+ объектов. Лицензия МЧС России."
+        />
+        <link rel="canonical" href="https://pozhdozor.ru/" />
+      </Helmet>
       <IsmHeader
         scrolled={scrolled}
         menuOpen={menuOpen}

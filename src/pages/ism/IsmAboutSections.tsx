@@ -119,7 +119,7 @@ export default function IsmAboutSections({ aboutObs, portfolioObs, testimonialsO
           </div>
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
             <div className={`${certsObs.inView ? "animate-fade-in-left" : "opacity-0"}`}>
-              <img src={CERT_IMAGE} alt="Сертификаты" className="rounded-2xl w-full object-cover object-top shadow-xl" style={{ minHeight: "240px", maxHeight: "400px" }} />
+              <img src={CERT_IMAGE} alt="Лицензии и сертификаты МЧС России компании ПожДозор" className="rounded-2xl w-full object-cover object-top shadow-xl" style={{ minHeight: "240px", maxHeight: "400px" }} />
             </div>
             <div className="grid grid-cols-1 gap-4 content-start">
               {certificates.map((c, i) => (
