@@ -54,9 +54,19 @@ const timeline = [
   { icon: "Repeat", title: "Пополнение", desc: "Патрубки позволяют пополнить запас из гидранта, скважины или водоёма" },
 ];
 
+const droneFaqs = [
+  { q: "Что такое активная защита кровли от пожара?", a: "Это вынесенная за периметр здания система тушения крыши: вышки с лафетными стволами подают воду или пену прямо на кровлю снаружи, не завися от внутренних коммуникаций и несущих конструкций объекта." },
+  { q: "Как быстро начинается тушение крыши после сигнала тревоги?", a: "Автономная контейнерная установка подаёт воду в очаг возгорания на крыше в течение 3 минут после сигнала тревоги — этого времени достаточно, чтобы сбить первичное пламя и не допустить распространения огня." },
+  { q: "Как работает активная защита от дроновой атаки?", a: "При падении БПЛА на кровлю и возникновении возгорания вышки по периметру здания начинают подачу воды на крышу через лафетные стволы дальностью 60–80 метров, не завися от состояния самого здания и электросети." },
+  { q: "Нужно ли электричество для тушения крыши?", a: "Нет. Насос установки работает от дизельного привода, поэтому тушение крыши возможно даже при полном отключении электроэнергии на объекте." },
+  { q: "На сколько хватает запаса воды в контейнере?", a: "Запаса воды хватает на 15 минут интенсивного тушения. Для длительной борьбы с огнём предусмотрены патрубки для пополнения из гидранта, скважины или ближайшего водоёма." },
+  { q: "Можно ли установить защиту кровли от БПЛА на уже эксплуатируемый объект?", a: "Да. Вышки размещаются на небольшом расстоянии от стены и не требуют интеграции в несущие конструкции здания, поэтому систему можно смонтировать без остановки работы объекта." },
+];
+
 export default function DroneDefense() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [callbackOpen, setCallbackOpen] = useState(false);
   const [callbackPhone, setCallbackPhone] = useState("");
   const [callbackState, setCallbackState] = useState<FormState>("idle");
@@ -77,6 +87,7 @@ export default function DroneDefense() {
   const specsObs = useInView(0.1);
   const architectureObs = useInView(0.1);
   const timelineObs = useInView(0.1);
+  const faqObs = useInView(0.1);
   const contactsObs = useInView(0.1);
 
   return (
@@ -133,6 +144,20 @@ export default function DroneDefense() {
             areaServed: "Москва",
             image: HERO_IMAGE,
             url: "https://pozhdozor.ru/drone-defense",
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: droneFaqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.a,
+              },
+            })),
           })}
         </script>
       </Helmet>
@@ -328,6 +353,36 @@ export default function DroneDefense() {
                   <div className="font-display font-bold text-[var(--dark)] mb-1.5">{a.title}</div>
                   <p className="text-[var(--gray)] text-sm leading-relaxed">{a.desc}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 bg-gray-50">
+        <div ref={faqObs.ref} className="max-w-3xl mx-auto px-4 lg:px-8">
+          <div className={`text-center mb-14 ${faqObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="inline-flex items-center gap-2 text-[var(--blue)] text-sm font-semibold uppercase tracking-wider mb-3">
+              <div className="section-divider w-8" />
+              FAQ
+              <div className="section-divider w-8" />
+            </div>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[var(--dark)] mb-4">Вопросы о защите кровли от БПЛА</h2>
+            <p className="text-[var(--gray)]">Отвечаем на частые вопросы о тушении крыши и активной защите от дроновой атаки</p>
+          </div>
+          <div className="space-y-3">
+            {droneFaqs.map((f, i) => (
+              <div key={i} className={`bg-white rounded-xl overflow-hidden border border-gray-100 card-hover ${faqObs.inView ? `animate-fade-in-up delay-${i * 50 + 100}` : "opacity-0"}`}>
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left">
+                  <span className="font-display font-semibold text-[var(--dark)] pr-4">{f.q}</span>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all ${openFaq === i ? "bg-[var(--blue)] text-white rotate-45" : "bg-[var(--blue-50)] text-[var(--blue)]"}`}>
+                    <Icon name="Plus" size={16} />
+                  </div>
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 text-[var(--gray)] leading-relaxed border-t border-gray-100 pt-4">{f.a}</div>
+                )}
               </div>
             ))}
           </div>
