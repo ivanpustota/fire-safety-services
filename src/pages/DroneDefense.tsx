@@ -54,6 +54,10 @@ const timeline = [
   { icon: "Repeat", title: "Пополнение", desc: "Патрубки позволяют пополнить запас из гидранта, скважины или водоёма" },
 ];
 
+const ARTICLE_IMAGE_CONTAINER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/dafed340-aabf-44e9-bb3b-55d19d2435b7.jpg";
+const ARTICLE_IMAGE_TOWER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/54093c5d-2949-4e4a-9a03-6d2c159ecac9.jpg";
+const ARTICLE_IMAGE_CONTROL = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/e6107543-2a75-4a14-8e1e-57f36dacf401.jpg";
+
 const droneFaqs = [
   { q: "Что такое активная защита кровли от пожара?", a: "Это вынесенная за периметр здания система тушения крыши: вышки с лафетными стволами подают воду или пену прямо на кровлю снаружи, не завися от внутренних коммуникаций и несущих конструкций объекта." },
   { q: "Как быстро начинается тушение крыши после сигнала тревоги?", a: "Автономная контейнерная установка подаёт воду в очаг возгорания на крыше в течение 3 минут после сигнала тревоги — этого времени достаточно, чтобы сбить первичное пламя и не допустить распространения огня." },
@@ -63,10 +67,85 @@ const droneFaqs = [
   { q: "Можно ли установить защиту кровли от БПЛА на уже эксплуатируемый объект?", a: "Да. Вышки размещаются на небольшом расстоянии от стены и не требуют интеграции в несущие конструкции здания, поэтому систему можно смонтировать без остановки работы объекта." },
 ];
 
+const articleSections = [
+  {
+    title: "Автономность и мощность в одном контейнере",
+    image: ARTICLE_IMAGE_CONTAINER,
+    imageAlt: "Насосная станция внутри 40-футового контейнера с ёмкостью для воды и дизельным насосом",
+    paragraphs: [
+      "Сердце нашей системы — стандартный 40-футовый морской контейнер. Это не просто склад оборудования, а полноценная насосная станция, готовая к немедленному запуску.",
+    ],
+    list: {
+      title: "Компоновка установки:",
+      items: [
+        "Две трети объёма занимает пластиковая ёмкость для воды. Это стратегический запас, который позволяет начать тушение немедленно, не дожидаясь подключения к внешним источникам.",
+        "Оставшаяся часть отведена под мощный пожарный насос с дизельным приводом. Именно дизельный двигатель делает систему полностью независимой от городских электросетей, которые в условиях ЧС часто обесточены.",
+        "Контейнер размещается на удобной площадке рядом со зданием. От него к периметру защищаемого объекта прокладывается магистраль диаметром 100 мм.",
+      ],
+    },
+  },
+  {
+    title: "Архитектура защиты: вышки и лафетные стволы",
+    image: ARTICLE_IMAGE_TOWER,
+    imageAlt: "Пожарная вышка с лафетным стволом подаёт струю воды на крышу склада",
+    paragraphs: [
+      "В отличие от традиционных систем, где вода подаётся изнутри здания, мы выносим огневую мощь наружу. По периметру здания устанавливаются специальные вышки.",
+    ],
+    list: {
+      title: "Что внутри вышки?",
+      items: [
+        "Лестница для подъёма на верхнюю площадку.",
+        "Лафетный ствол (гидромонитор), способный подавать струю воды на расстояние 70–80 метров.",
+      ],
+    },
+    footer: "Такое расположение позволяет эффективно «доставать» до очага возгорания на крыше, не завися от несущих конструкций самого здания. Даже если кровля просела или внутренние коммуникации повреждены, вышки продолжают работать.",
+  },
+  {
+    title: "Скорость реакции: 3 минуты на спасение",
+    paragraphs: [
+      "Время — критический фактор при пожаре. Наша система обеспечивает подачу воды в очаг возгорания на крыше в течение 3 минут после сигнала тревоги.",
+    ],
+    list: {
+      title: "Ресурс и пополнение:",
+      items: [
+        "Запаса воды в контейнере хватает на первые 15 минут интенсивного тушения. Этого времени достаточно, чтобы сбить первичное пламя и предотвратить распространение огня на несущие конструкции.",
+        "Для длительной борьбы с огнём предусмотрены пожарные патрубки — систему можно оперативно пополнить из ближайшего водоёма, скважины или городского гидранта.",
+      ],
+    },
+  },
+  {
+    title: "Гибкость управления",
+    image: ARTICLE_IMAGE_CONTROL,
+    imageAlt: "Оператор управляет лафетными стволами удалённо из контейнера, в безопасной зоне",
+    paragraphs: [
+      "Мы предлагаем комплектации как с ручным управлением лафетными стволами непосредственно с вышек, так и с удалённым управлением прямо из контейнера. Это позволяет оператору находиться в безопасной зоне, контролируя всю картину пожара и направляя струи воды в нужную точку с ювелирной точностью.",
+    ],
+  },
+  {
+    title: "Главные преимущества системы",
+    list: {
+      items: [
+        "Полная энергонезависимость. Дизельный насос работает автономно. Отключение электричества на объекте не остановит систему.",
+        "Независимость от здания. Вышки стоят на небольшом расстоянии от стены. Система не требует интеграции в несущие конструкции и может быть установлена даже на уже эксплуатируемых объектах.",
+        "Высокая эффективность. Струя 70–80 метров позволяет защищать кровлю большой площади с минимальным количеством вышек.",
+        "Быстрый старт. 3 минуты до подачи воды — это скорость, которая часто определяет грань между локальным возгоранием и крупной катастрофой.",
+      ],
+    },
+  },
+  {
+    title: "Заключение",
+    paragraphs: [
+      "Активная защита крыши от последствий падения БПЛА — это не роскошь, а необходимость для современных промышленных объектов. Наша контейнерная установка сочетает в себе мощь, автономность и скорость, предлагая надёжное решение там, где стандартные системы могут оказаться бессильны.",
+      "Свяжитесь с нами, чтобы рассчитать комплектацию под ваш объект и получить подробную техническую документацию.",
+    ],
+  },
+];
+
 export default function DroneDefense() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [articleOpen, setArticleOpen] = useState(false);
   const [callbackOpen, setCallbackOpen] = useState(false);
   const [callbackPhone, setCallbackPhone] = useState("");
   const [callbackState, setCallbackState] = useState<FormState>("idle");
@@ -83,6 +162,7 @@ export default function DroneDefense() {
   }, []);
 
   const heroObs = useInView(0.1);
+  const articleObs = useInView(0.1);
   const advObs = useInView(0.1);
   const specsObs = useInView(0.1);
   const architectureObs = useInView(0.1);
@@ -191,6 +271,87 @@ export default function DroneDefense() {
             <a href="#how" className="px-6 py-3.5 border border-white/25 text-white font-bold rounded-xl hover:bg-white/10 transition-all text-center text-base">
               Как это работает
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* СТАТЬЯ */}
+      <section id="article" className="py-20 bg-white">
+        <div ref={articleObs.ref} className="max-w-3xl mx-auto px-4 lg:px-8">
+          <div className={`text-center mb-10 ${articleObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="inline-flex items-center gap-2 text-[var(--blue)] text-sm font-semibold uppercase tracking-wider mb-3">
+              <div className="section-divider w-8" />
+              Статья
+              <div className="section-divider w-8" />
+            </div>
+            <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-[var(--dark)] mb-4 leading-tight">
+              Активная защита крыши: инновационный комплекс пожаротушения для объектов с угрозой БПЛА
+            </h2>
+          </div>
+          <div className={`prose-drone ${articleObs.inView ? "animate-fade-in-up delay-100" : "opacity-0"}`}>
+            <p className="text-[var(--gray)] leading-relaxed mb-4">
+              Современные реалии диктуют новые правила безопасности для промышленных объектов, складов и производственных цехов. Угроза падения беспилотных летательных аппаратов (БПЛА) и последующих возгораний на кровле зданий требует решений, которые не просто соответствуют нормам, но и работают быстрее и надёжнее стандартных систем.
+            </p>
+            <p className="text-[var(--gray)] leading-relaxed mb-2">
+              Наша компания представляет новый подход к устранению последствий пожаров, вызванных падением БПЛА. Мы разработали автономную установку пожаротушения контейнерного типа, способную вступить в борьбу с огнём на крыше в считанные минуты.
+            </p>
+
+            {!articleOpen && (
+              <div className="text-center mt-6">
+                <button
+                  onClick={() => setArticleOpen(true)}
+                  className="inline-flex items-center gap-2 text-[var(--blue)] font-semibold hover:gap-3 transition-all"
+                >
+                  Читать полностью
+                  <Icon name="ChevronDown" size={18} />
+                </button>
+              </div>
+            )}
+
+            {articleOpen && (
+              <div className="mt-4 animate-fade-in-up">
+                {articleSections.map((s, i) => (
+                  <div key={i} className="mt-10 pt-10 border-t border-gray-100 first:mt-6 first:pt-0 first:border-0">
+                    <h3 className="font-display font-bold text-xl sm:text-2xl text-[var(--dark)] mb-4">{s.title}</h3>
+                    {s.image && (
+                      <div className="rounded-xl overflow-hidden mb-5 max-h-64">
+                        <img src={s.image} alt={s.imageAlt} className="w-full h-64 object-cover" />
+                      </div>
+                    )}
+                    {s.paragraphs?.map((p, pi) => (
+                      <p key={pi} className="text-[var(--gray)] leading-relaxed mb-4">{p}</p>
+                    ))}
+                    {s.list && (
+                      <div className="mb-2">
+                        {s.list.title && <div className="font-display font-semibold text-[var(--dark)] mb-3">{s.list.title}</div>}
+                        <ul className="space-y-3">
+                          {s.list.items.map((item, li) => (
+                            <li key={li} className="flex items-start gap-3">
+                              <div className="w-6 h-6 bg-[var(--blue-50)] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <Icon name="Check" size={14} className="text-[var(--blue)]" />
+                              </div>
+                              <span className="text-[var(--gray)] text-sm leading-relaxed">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {s.footer && (
+                      <p className="text-[var(--gray)] leading-relaxed mt-4 border-l-2 border-[var(--blue)] pl-4">{s.footer}</p>
+                    )}
+                  </div>
+                ))}
+                <div className="text-center mt-10">
+                  <button
+                    onClick={() => setArticleOpen(false)}
+                    className="inline-flex items-center gap-2 text-[var(--blue)] font-semibold hover:gap-3 transition-all"
+                  >
+                    Свернуть статью
+                    <Icon name="ChevronUp" size={18} />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
