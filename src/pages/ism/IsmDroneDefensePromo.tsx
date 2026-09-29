@@ -6,7 +6,7 @@ interface InViewObs {
   inView: boolean;
 }
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/74ad597d-1e4c-406e-88f0-c01abf068a6f.png";
+const HERO_IMAGE = "/assets/drone-hero.webp";
 
 export default function IsmDroneDefensePromo({ obs }: { obs: InViewObs }) {
   return (

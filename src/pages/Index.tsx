@@ -5,7 +5,7 @@ import Icon from "@/components/ui/icon";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { testimonials } from "@/pages/ism/ism.data";
 
-const DRONE_DEFENSE_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/74ad597d-1e4c-406e-88f0-c01abf068a6f.png";
+const DRONE_DEFENSE_IMAGE = "/assets/drone-hero.webp";
 
 const VkIcon = ({ size = 16, className = "" }: { size?: number; className?: string }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>

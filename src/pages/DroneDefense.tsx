@@ -5,8 +5,9 @@ import IsmHeader from "./ism/IsmHeader";
 import IsmContactsFooter from "./ism/IsmContactsFooter";
 import { FormState } from "./ism/ism.data";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/74ad597d-1e4c-406e-88f0-c01abf068a6f.png";
-const TOWER_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/b5937be9-70fe-4add-8386-88abe9e9aadf.png";
+const HERO_IMAGE = "/assets/drone-hero.webp";
+const HERO_IMAGE_ABSOLUTE = "https://pozhdozor.ru/assets/drone-hero.webp";
+const TOWER_IMAGE = "/assets/drone-tower.webp";
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -54,10 +55,10 @@ const timeline = [
   { icon: "Repeat", title: "Пополнение", desc: "Патрубки позволяют пополнить запас из гидранта, скважины или водоёма" },
 ];
 
-const ARTICLE_IMAGE_CONTAINER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/3a6be58e-27d2-4a3f-90e4-a55bceaca0b2.jpg";
+const ARTICLE_IMAGE_CONTAINER = "/assets/drone-container-new.webp";
 const ARTICLE_IMAGE_TOWER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/7179b1b9-728d-4691-a8aa-ff702eec9b20.jpg";
-const ROOF_FIRE_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/ee252ab6-ea51-4f7c-9fa7-bc2ef1b2ef75.jpg";
-const ARTICLE_IMAGE_CONTROL = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/e6107543-2a75-4a14-8e1e-57f36dacf401.jpg";
+const ROOF_FIRE_IMAGE = "/assets/drone-roof-fire.webp";
+const ARTICLE_IMAGE_CONTROL = "/assets/drone-control.webp";
 
 const droneFaqs = [
   { q: "Что такое активная защита кровли от пожара?", a: "Это вынесенная за периметр здания система тушения крыши: вышки с лафетными стволами подают воду или пену прямо на кровлю снаружи, не завися от внутренних коммуникаций и несущих конструкций объекта." },
@@ -191,7 +192,7 @@ export default function DroneDefense() {
           property="og:description"
           content="Активная защита кровли от пожара и последствий дроновой атаки. Тушение крыши за 3 минуты, дальность струи до 80 метров, полная энергонезависимость."
         />
-        <meta property="og:image" content={HERO_IMAGE} />
+        <meta property="og:image" content={HERO_IMAGE_ABSOLUTE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Активная защита кровли от БПЛА — установка для тушения крыши" />
@@ -201,7 +202,7 @@ export default function DroneDefense() {
           name="twitter:description"
           content="Активная защита кровли от пожара и дроновой атаки. Тушение крыши за 3 минуты, дальность струи до 80 метров."
         />
-        <meta name="twitter:image" content={HERO_IMAGE} />
+        <meta name="twitter:image" content={HERO_IMAGE_ABSOLUTE} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -222,7 +223,7 @@ export default function DroneDefense() {
               },
             },
             areaServed: "Москва",
-            image: HERO_IMAGE,
+            image: HERO_IMAGE_ABSOLUTE,
             url: "https://pozhdozor.ru/drone-defense",
           })}
         </script>
@@ -347,11 +348,11 @@ export default function DroneDefense() {
               В отличие от традиционных систем, где вода подаётся изнутри здания, мы выносим противопожарную систему наружу — так реализуется активная защита кровли от пожара. По периметру объекта устанавливаются специальные вышки с гидромониторами.
             </p>
           </div>
-          <div className={`rounded-2xl overflow-hidden shadow-xl ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-            <img src={TOWER_IMAGE} alt="Пожарная вышка с лафетным стволом для защиты кровли склада от возгорания" className="w-full h-auto object-cover" />
+          <div className={`rounded-2xl overflow-hidden shadow-xl aspect-[3/2] ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+            <img src={TOWER_IMAGE} alt="Пожарная вышка с лафетным стволом для защиты кровли склада от возгорания" width={1400} height={933} className="w-full h-full object-cover" />
           </div>
-          <div className={`rounded-2xl overflow-hidden shadow-xl mt-6 ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-            <img src={ROOF_FIRE_IMAGE} alt="Тушение пожара на кровле склада лафетным стволом с пожарной вышки" className="w-full h-auto object-cover" />
+          <div className={`rounded-2xl overflow-hidden shadow-xl mt-6 aspect-square ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+            <img src={ROOF_FIRE_IMAGE} alt="Тушение пожара на кровле склада лафетным стволом с пожарной вышки" width={1400} height={1400} className="w-full h-full object-cover" />
           </div>
           <div className={`grid sm:grid-cols-2 gap-4 mt-8 ${architectureObs.inView ? "animate-fade-in-up delay-300" : "opacity-0"}`}>
             <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-100">
@@ -381,8 +382,8 @@ export default function DroneDefense() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden">
-                <img src={HERO_IMAGE} alt="40-футовый контейнер с насосной установкой для тушения пожара на кровле склада" className="w-full h-[280px] sm:h-[380px] lg:h-[420px] object-cover object-left" />
+              <div className="rounded-2xl overflow-hidden h-[280px] sm:h-[380px] lg:h-[420px]">
+                <img src={ARTICLE_IMAGE_CONTAINER} alt="Насосная станция внутри контейнера с перегородкой и ёмкостью для воды на заднем плане" width={1200} height={1200} className="w-full h-full object-cover object-center" />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-[var(--blue-dark)] text-white rounded-2xl p-5 shadow-2xl max-w-[220px] hidden sm:block">
                 <div className="font-display font-black text-3xl mb-1">3 мин</div>
