@@ -14,7 +14,7 @@ function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
   const el = document.getElementById(id);
   if (el) {
     e.preventDefault();
-    el.scrollIntoView({ behavior: "smooth" });
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 
@@ -50,7 +50,7 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
             Защита от БПЛА
           </Link>
           {navLinks.map((l) => (
-            <Link key={l.href} to={`/${l.href}`} reloadDocument onClick={(e) => handleNavClick(e, l.href)} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
+            <Link key={l.href} to={`/${l.href}`} onClick={(e) => handleNavClick(e, l.href)} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
               {l.label}
             </Link>
           ))}
@@ -92,7 +92,6 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
             <Link
               key={l.href}
               to={`/${l.href}`}
-              reloadDocument
               onClick={(e) => { handleNavClick(e, l.href); setMenuOpen(false); }}
               className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors"
             >
