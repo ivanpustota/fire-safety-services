@@ -9,6 +9,15 @@ interface IsmHeaderProps {
   onCallbackOpen: () => void;
 }
 
+function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (el) {
+    e.preventDefault();
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
 export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackOpen }: IsmHeaderProps) {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(26,95,180,0.1)]" : "bg-transparent"}`}>
@@ -18,14 +27,14 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
             <Icon name="ShieldCheck" size={20} className="text-white" />
           </div>
           <div className="flex flex-col min-w-0">
-            <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+            <Link to="/">
               <div className="font-display font-extrabold text-base leading-none">
                 <span className={scrolled ? "text-[var(--dark)]" : "text-white"}>Пож</span><span className="text-[var(--blue)]">Дозор</span>
               </div>
               <div className={`text-[10px] font-medium tracking-wider uppercase transition-colors ${scrolled ? "text-[var(--blue)]" : "text-blue-300"}`}>
                 Мониторинг 24/7
               </div>
-            </a>
+            </Link>
             <a href="tel:+74994902201" className={`lg:hidden flex items-center gap-1 text-[12px] font-bold mt-0.5 transition-colors ${scrolled ? "text-[var(--blue)]" : "text-white"}`}>
               <Icon name="Phone" size={12} />
               +7 (499) 490-22-01
@@ -34,16 +43,16 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
         </div>
 
         <nav className="hidden lg:flex items-center gap-4">
-          <Link to="/uslugi" className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
-            Услуги
+          <Link to="/" className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
+            Главная
           </Link>
           <Link to="/drone-defense" className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
             Защита от БПЛА
           </Link>
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
+            <Link key={l.href} to={`/${l.href}`} reloadDocument onClick={(e) => handleNavClick(e, l.href)} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -73,16 +82,22 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
 
       {menuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl">
-          <Link to="/uslugi" onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
-            Услуги
+          <Link to="/" onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
+            Главная
           </Link>
           <Link to="/drone-defense" onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
             Защита от БПЛА
           </Link>
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
+            <Link
+              key={l.href}
+              to={`/${l.href}`}
+              reloadDocument
+              onClick={(e) => { handleNavClick(e, l.href); setMenuOpen(false); }}
+              className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors"
+            >
               {l.label}
-            </a>
+            </Link>
           ))}
           <div className="px-6 py-4 border-t border-gray-100">
             <a href="tel:+74994902201" className="block text-[var(--blue)] font-semibold mb-3">+7 (499) 490-22-01</a>
