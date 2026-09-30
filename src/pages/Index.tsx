@@ -988,6 +988,7 @@ export default function Index() {
                 { icon: "Mail", title: "Email", lines: ["skpb01@mail.ru"] },
                 { icon: "MapPin", title: "Адрес", lines: ["г. Москва, ул. 5-я Магистральная,", "дом 12, офис 410"] },
                 { icon: "Clock", title: "Режим работы", lines: ["Пн–Пт: 9:00 – 18:00", "Диспетчерская служба: 24/7"] },
+                { icon: "Building2", title: "Реквизиты", lines: ["ООО «СПАРК»", "ИНН 7734401111"] },
               ].map((c, i) => (
                 <div key={i} className="flex items-start gap-4 p-5 bg-[var(--gray-light)] rounded-xl">
                   <div className="w-12 h-12 bg-[var(--blue)] rounded-xl flex items-center justify-center flex-shrink-0">
@@ -1099,6 +1100,10 @@ export default function Index() {
                   <Icon name="MapPin" size={14} className="text-[var(--blue-light)] mt-0.5" />
                   ул. 5-я Магистральная, д. 12, офис 410
                 </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="Building2" size={14} className="text-[var(--blue-light)] mt-0.5" />
+                  ООО «СПАРК», ИНН 7734401111
+                </li>
                 <li className="flex items-center gap-2">
                   <VkIcon size={14} className="text-[var(--blue-light)]" />
                   <a href="https://vk.com/club239578012" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Сообщество ВКонтакте</a>
@@ -1108,7 +1113,7 @@ export default function Index() {
           </div>
 
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-            <div className="text-gray-500 text-sm">© 2026 ООО «СПАРК». Все права защищены.</div>
+            <div className="text-gray-500 text-sm">© 2026 ООО «СПАРК», ИНН 7734401111. Все права защищены.</div>
             <div className="flex items-center gap-4 text-xs text-gray-600">
               <a href="/docs/privacy-policy.docx" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Политика конфиденциальности</a>
               <a href="/docs/terms-of-use.docx" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Условия использования</a>
