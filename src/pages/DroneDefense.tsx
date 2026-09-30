@@ -55,7 +55,7 @@ const timeline = [
   { icon: "Repeat", title: "Пополнение", desc: "Патрубки позволяют пополнить запас из гидранта, скважины или водоёма" },
 ];
 
-const ARTICLE_IMAGE_CONTAINER = "/assets/drone-container-new.webp";
+const ARTICLE_IMAGE_CONTAINER = "/assets/drone-container-pump-v2.webp";
 const ARTICLE_IMAGE_TOWER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/7179b1b9-728d-4691-a8aa-ff702eec9b20.jpg";
 const ROOF_FIRE_IMAGE = "/assets/drone-roof-fire.webp";
 const ARTICLE_IMAGE_CONTROL = "/assets/drone-control.webp";
@@ -383,7 +383,7 @@ export default function DroneDefense() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="relative">
               <div className="rounded-2xl overflow-hidden h-[280px] sm:h-[380px] lg:h-[420px]">
-                <img src={ARTICLE_IMAGE_CONTAINER} alt="Насосная станция внутри контейнера с перегородкой и ёмкостью для воды на заднем плане" width={1200} height={1200} className="w-full h-full object-cover object-center" />
+                <img src={HERO_IMAGE} alt="40-футовый контейнер с насосной установкой рядом со зданием для тушения пожара на кровле" width={1600} height={900} className="w-full h-full object-cover object-left" />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-[var(--blue-dark)] text-white rounded-2xl p-5 shadow-2xl max-w-[220px] hidden sm:block">
                 <div className="font-display font-black text-3xl mb-1">3 мин</div>
