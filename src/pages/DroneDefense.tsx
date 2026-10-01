@@ -37,17 +37,13 @@ const advantages = [
 ];
 
 const specs = [
-  { icon: "Container", label: "Контейнер", value: "40 футов", sub: "с насосами и оборудованием" },
-  { icon: "Timer", label: "Время реакции", value: "от 3 мин", sub: "запуск двигателя и заполнение сухотруба водой" },
-  { icon: "Ruler", label: "Труба", value: "сухотруб Ø 100 мм", sub: "заполняется водой только в момент пожара" },
-  { icon: "Building", label: "Высота склада", value: "до 20 м", sub: "типовой расчёт" },
-  { icon: "MoveVertical", label: "Высота вышки", value: "кровля +2 м", sub: "сборные секции, монтаж под нужную высоту на объекте" },
-  { icon: "Waves", label: "Лафетные стволы", value: "2 шт.", sub: "с дистанционным управлением" },
-  { icon: "Gauge", label: "Дальность струи", value: "60–80 м", sub: "воды и пены на крышу" },
-  { icon: "SlidersHorizontal", label: "Насосная станция", value: "по расчёту", sub: "производительность подбирается под задачу объекта" },
-  { icon: "Thermometer", label: "Температура эксплуатации", value: "до −40 °C", sub: "утепление контейнера и подогрев ёмкости с водой" },
-  { icon: "CalendarClock", label: "Срок монтажа под ключ", value: "1–2 месяца", sub: "в зависимости от комплектации системы" },
-  { icon: "ScanEye", label: "Топовая комплектация", value: "датчики пламени", sub: "автоматическое обнаружение и тушение без оператора" },
+  { icon: "Container", label: "Контейнер", value: "40 футов утеплённый", sub: "с подогреваемой ёмкостью 40 кубов" },
+  { icon: "Thermometer", label: "Температура эксплуатации", value: "до −40 °C", sub: "" },
+  { icon: "Ruler", label: "Труба", value: "Сухотруб Ø 100 мм", sub: "с переходом на 80 мм, 30 м" },
+  { icon: "MoveVertical", label: "Высота вышки", value: "18 м", sub: "сборные секции" },
+  { icon: "Waves", label: "Лафетный ствол", value: "ЛС-С60, 1 шт.", sub: "с ручным управлением" },
+  { icon: "Gauge", label: "Насосная станция", value: "Гейзер МП-20/100", sub: "на основе пожарной мотопомпы" },
+  { icon: "Banknote", label: "Стоимость", value: "5 498 000 руб.", sub: "с НДС" },
 ];
 
 const containerContents = [
@@ -473,7 +469,7 @@ export default function DroneDefense() {
               Технические параметры
               <div className="section-divider w-8" />
             </div>
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white mb-4">Комплектация установки</h2>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white mb-4">Пример стоимости одной из комплектаций установки</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {specs.map((s, i) => (
