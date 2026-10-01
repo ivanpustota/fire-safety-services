@@ -7,7 +7,7 @@ import { FormState } from "./ism/ism.data";
 
 const HERO_IMAGE = "/assets/drone-hero.webp";
 const HERO_IMAGE_ABSOLUTE = "https://pozhdozor.ru/assets/drone-hero.webp";
-const TOWER_IMAGE = "/assets/drone-architecture.webp";
+const TOWER_IMAGE = "/assets/drone-tower.webp";
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -63,7 +63,7 @@ const timeline = [
 ];
 
 const ARTICLE_IMAGE_CONTAINER = "/assets/drone-container-pump-v2.webp";
-const ARTICLE_IMAGE_TOWER = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/7179b1b9-728d-4691-a8aa-ff702eec9b20.jpg";
+const ARTICLE_IMAGE_TOWER = "/assets/drone-architecture.webp";
 const ROOF_FIRE_IMAGE = "/assets/drone-roof-fire.webp";
 const ARTICLE_IMAGE_CONTROL = "/assets/drone-control.webp";
 
@@ -103,7 +103,8 @@ const articleSections = [
   {
     title: "Архитектура защиты: вышки и лафетные стволы",
     image: ARTICLE_IMAGE_TOWER,
-    imageAlt: "Пожарная вышка с лафетным стволом подаёт струю воды на крышу склада",
+    imageAlt: "Вышки с лафетными стволами по периметру склада тушат пожар на кровле",
+    imageFull: true,
     paragraphs: [
       "В отличие от систем, где вода подаётся изнутри здания, в данной установке подача организована снаружи. По периметру здания размещаются вышки с лафетными стволами.",
     ],
@@ -330,8 +331,8 @@ export default function DroneDefense() {
                 <div key={i} className="mt-10 pt-10 border-t border-gray-100 first:mt-6 first:pt-0 first:border-0">
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-[var(--dark)] mb-4">{s.title}</h3>
                   {s.image && (
-                    <div className="rounded-xl overflow-hidden mb-5 max-h-64">
-                      <img src={s.image} alt={s.imageAlt} className="w-full h-64 object-cover" />
+                    <div className={`rounded-xl overflow-hidden mb-5 ${s.imageFull ? "" : "max-h-64"}`}>
+                      <img src={s.image} alt={s.imageAlt} className={`w-full ${s.imageFull ? "h-auto" : "h-64 object-cover"}`} />
                     </div>
                   )}
                   {s.paragraphs?.map((p, pi) => (
@@ -388,8 +389,8 @@ export default function DroneDefense() {
               В отличие от систем, где вода подаётся изнутри здания, в данной установке подача организована снаружи — по периметру объекта размещаются вышки с гидромониторами.
             </p>
           </div>
-          <div className={`rounded-2xl overflow-hidden shadow-xl aspect-video ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-            <img src={TOWER_IMAGE} alt="Вышки с лафетными стволами по периметру склада тушат пожар на кровле" width={1600} height={900} className="w-full h-full object-cover" />
+          <div className={`rounded-2xl overflow-hidden shadow-xl aspect-[3/2] ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+            <img src={TOWER_IMAGE} alt="Пожарная вышка с лафетным стволом для защиты кровли склада от возгорания" width={1400} height={933} className="w-full h-full object-cover" />
           </div>
           <div className={`rounded-2xl overflow-hidden shadow-xl mt-6 aspect-square ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
             <img src={ROOF_FIRE_IMAGE} alt="Тушение пожара на кровле склада лафетным стволом с пожарной вышки" width={1400} height={1400} className="w-full h-full object-cover" />
