@@ -7,7 +7,7 @@ import { FormState } from "./ism/ism.data";
 
 const HERO_IMAGE = "/assets/drone-hero.webp";
 const HERO_IMAGE_ABSOLUTE = "https://pozhdozor.ru/assets/drone-hero.webp";
-const TOWER_IMAGE = "/assets/drone-tower.webp";
+const TOWER_IMAGE = "/assets/drone-architecture.webp";
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -388,8 +388,8 @@ export default function DroneDefense() {
               В отличие от систем, где вода подаётся изнутри здания, в данной установке подача организована снаружи — по периметру объекта размещаются вышки с гидромониторами.
             </p>
           </div>
-          <div className={`rounded-2xl overflow-hidden shadow-xl aspect-[3/2] ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-            <img src={TOWER_IMAGE} alt="Пожарная вышка с лафетным стволом для защиты кровли склада от возгорания" width={1400} height={933} className="w-full h-full object-cover object-top" />
+          <div className={`rounded-2xl overflow-hidden shadow-xl aspect-video ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+            <img src={TOWER_IMAGE} alt="Вышки с лафетными стволами по периметру склада тушат пожар на кровле" width={1600} height={900} className="w-full h-full object-cover" />
           </div>
           <div className={`rounded-2xl overflow-hidden shadow-xl mt-6 aspect-square ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
             <img src={ROOF_FIRE_IMAGE} alt="Тушение пожара на кровле склада лафетным стволом с пожарной вышки" width={1400} height={1400} className="w-full h-full object-cover" />
