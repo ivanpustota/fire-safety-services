@@ -300,7 +300,7 @@ export default function Index() {
             >
               Главная
             </a>
-            <a href="/drone-defense" className="btn-blink-red px-3 py-1.5 text-sm font-semibold whitespace-nowrap">
+            <a href="/drone-defense" className={`btn-blink-red px-3 py-1.5 text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
               Защита от БПЛА
             </a>
             {navLinks.map((l) => (
@@ -358,7 +358,7 @@ export default function Index() {
             <a href="/" onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
               Главная
             </a>
-            <a href="/drone-defense" onClick={() => setMenuOpen(false)} className="btn-blink-red block mx-6 my-2 px-4 py-3 text-center font-semibold">
+            <a href="/drone-defense" onClick={() => setMenuOpen(false)} className="btn-blink-red block mx-6 my-2 px-4 py-3 text-center text-[var(--dark)] font-medium">
               Защита от БПЛА
             </a>
             {navLinks.map((l) => (

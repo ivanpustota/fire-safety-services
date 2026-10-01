@@ -46,7 +46,7 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
           <Link to="/" className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
             Главная
           </Link>
-          <Link to="/drone-defense" className="btn-blink-red px-3 py-1.5 text-sm font-semibold whitespace-nowrap">
+          <Link to="/drone-defense" className={`btn-blink-red px-3 py-1.5 text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
             Защита от БПЛА
           </Link>
           {navLinks.map((l) => (
@@ -85,7 +85,7 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
           <Link to="/" onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
             Главная
           </Link>
-          <Link to="/drone-defense" onClick={() => setMenuOpen(false)} className="btn-blink-red block mx-6 my-2 px-4 py-3 text-center font-semibold">
+          <Link to="/drone-defense" onClick={() => setMenuOpen(false)} className="btn-blink-red block mx-6 my-2 px-4 py-3 text-center text-[var(--dark)] font-medium">
             Защита от БПЛА
           </Link>
           {navLinks.map((l) => (
