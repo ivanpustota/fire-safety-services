@@ -389,7 +389,7 @@ export default function DroneDefense() {
             </p>
           </div>
           <div className={`rounded-2xl overflow-hidden shadow-xl aspect-[3/2] ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-            <img src={TOWER_IMAGE} alt="Пожарная вышка с лафетным стволом для защиты кровли склада от возгорания" width={1400} height={933} className="w-full h-full object-cover" />
+            <img src={TOWER_IMAGE} alt="Пожарная вышка с лафетным стволом для защиты кровли склада от возгорания" width={1400} height={933} className="w-full h-full object-cover object-top" />
           </div>
           <div className={`rounded-2xl overflow-hidden shadow-xl mt-6 aspect-square ${architectureObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
             <img src={ROOF_FIRE_IMAGE} alt="Тушение пожара на кровле склада лафетным стволом с пожарной вышки" width={1400} height={1400} className="w-full h-full object-cover" />
