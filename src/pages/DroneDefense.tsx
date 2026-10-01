@@ -357,6 +357,18 @@ export default function DroneDefense() {
                   )}
                 </div>
               ))}
+              <div className="mt-10 pt-10 border-t border-gray-100">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-[var(--dark)] mb-4">Видео: пожаротушение в работе</h3>
+                <div className="rounded-xl overflow-hidden bg-black">
+                  <video
+                    src="https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/ffde3bc6-24bc-4306-a820-e5494ef5aecf.mp4"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full max-h-[560px]"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
