@@ -45,7 +45,7 @@ const specs = [
   { icon: "Gauge", label: "Насосная станция", value: "Гейзер МП-20/100", sub: "на основе пожарной мотопомпы" },
   { icon: "SlidersHorizontal", label: "Управление", value: "Пульт управления", sub: "мотопомпой" },
   { icon: "Lightbulb", label: "Прожектор", value: "Светодиодный мощный", sub: "дальнего действия, монтируется на вышке" },
-  { icon: "Banknote", label: "Цена", value: "5 498 000 руб.", sub: "с НДС" },
+  { icon: "Banknote", label: "Цена", value: "5 498 000 руб.", sub: "включает монтаж установки на объекте, с НДС" },
 ];
 
 const containerContents = [
