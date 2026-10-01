@@ -488,7 +488,7 @@ export default function DroneDefense() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {specs.map((s, i) => (
               <div key={i} className={`flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-5 ${specsObs.inView ? `animate-fade-in-up delay-${i * 100}` : "opacity-0"}`}>
-                <div className="w-11 h-11 bg-[var(--blue)]/30 border border-[var(--blue-light)]/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className={`w-11 h-11 bg-[var(--blue)]/30 border border-[var(--blue-light)]/30 rounded-xl flex items-center justify-center flex-shrink-0 ${s.label === "Цена" ? "animate-pulse-border-green" : ""}`}>
                   <Icon name={s.icon} fallback="Wrench" size={20} className="text-[var(--blue-light)]" />
                 </div>
                 <div>
