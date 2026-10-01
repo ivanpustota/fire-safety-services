@@ -300,6 +300,9 @@ export default function Index() {
             >
               Главная
             </a>
+            <a href="/drone-defense" className="btn-blink-red px-3 py-1.5 text-sm font-semibold whitespace-nowrap">
+              Защита от БПЛА
+            </a>
             {navLinks.map((l) => (
               <a
                 key={l.href}
@@ -354,6 +357,9 @@ export default function Index() {
           <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl animate-fade-in">
             <a href="/" onClick={() => setMenuOpen(false)} className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors">
               Главная
+            </a>
+            <a href="/drone-defense" onClick={() => setMenuOpen(false)} className="btn-blink-red block mx-6 my-2 px-4 py-3 text-center font-semibold">
+              Защита от БПЛА
             </a>
             {navLinks.map((l) => (
               <a
