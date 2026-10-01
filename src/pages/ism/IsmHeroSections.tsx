@@ -36,7 +36,7 @@ export default function IsmHeroSections({ howObs, controlsObs, resultsObs, tarif
               <h1 className="font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-[1.1] mb-5">
                 Круглосуточная система мониторинга противопожарных систем
                 <br />
-                <span className="text-white/80 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Контролируем и обслуживаем пожарную безопасность 24/7</span>
+                <span className="text-white/80 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Контролируем и обслуживаем пожарную сигнализацию 24/7</span>
               </h1>
               <p className="text-base sm:text-lg text-white/90 font-medium leading-relaxed mb-8">
                 Удалённо отслеживаем состояние систем безопасности, выявляем и анализируем неисправности. Уведомляем ответственных лиц. Оперативно ремонтируем систему.
