@@ -57,7 +57,7 @@ export default function Ism() {
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       <Helmet>
-        <title>Круглосуточный мониторинг пожарной безопасности | ПожДозор Москва</title>
+        <title>Круглосуточный мониторинг пожарной сигнализации | ПожДозор Москва</title>
         <meta
           name="description"
           content="ПожДозор — мониторинг, обслуживание и ремонт пожарной сигнализации 24/7 в Москве. Реакция за 5 минут, 1200+ объектов. Лицензия МЧС России."
