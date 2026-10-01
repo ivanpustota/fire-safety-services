@@ -43,7 +43,6 @@ const specs = [
   { icon: "MoveVertical", label: "Высота вышки", value: "18 м", sub: "сборные секции" },
   { icon: "Waves", label: "Лафетный ствол", value: "ЛС-С60, 1 шт.", sub: "с ручным управлением" },
   { icon: "Gauge", label: "Насосная станция", value: "Гейзер МП-20/100", sub: "на основе пожарной мотопомпы" },
-  { icon: "Banknote", label: "Стоимость", value: "5 498 000 руб.", sub: "с НДС" },
 ];
 
 const containerContents = [
@@ -484,6 +483,18 @@ export default function DroneDefense() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className={`flex justify-center mt-4 ${specsObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-5 w-full max-w-sm">
+              <div className="w-11 h-11 bg-[var(--blue)]/30 border border-[var(--blue-light)]/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="Banknote" fallback="Wrench" size={20} className="text-[var(--blue-light)]" />
+              </div>
+              <div>
+                <div className="text-blue-300 text-xs mb-0.5">Цена</div>
+                <div className="font-display font-bold text-white text-lg leading-tight">5 498 000 руб.</div>
+                <div className="text-white/50 text-xs mt-0.5">с НДС</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
