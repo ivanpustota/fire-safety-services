@@ -344,7 +344,7 @@ export default function DroneDefense() {
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-[var(--dark)] mb-4">{s.title}</h3>
                   {s.image && (
                     <div className={`rounded-xl overflow-hidden mb-5 ${s.imageFull ? "" : "max-h-64"}`}>
-                      <img src={s.image} alt={s.imageAlt} className={`w-full ${s.imageFull ? "h-auto" : "h-64 object-cover"}`} />
+                      <img src={s.image} alt={s.imageAlt} width={1600} height={900} className={`w-full ${s.imageFull ? "h-auto" : "h-64 object-cover"}`} />
                     </div>
                   )}
                   {s.paragraphs?.map((p, pi) => (

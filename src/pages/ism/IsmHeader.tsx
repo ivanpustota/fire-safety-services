@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { navLinks } from "./ism.data";
+import { scrollToId } from "@/lib/scrollToId";
 
 interface IsmHeaderProps {
   scrolled: boolean;
@@ -16,7 +17,7 @@ function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string, ba
   const el = document.getElementById(id);
   if (el) {
     e.preventDefault();
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToId(id);
     window.history.replaceState(null, "", `${basePath}${href}`);
   }
 }
