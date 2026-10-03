@@ -5,6 +5,14 @@ import IsmHeader from "./ism/IsmHeader";
 import IsmContactsFooter from "./ism/IsmContactsFooter";
 import { FormState } from "./ism/ism.data";
 
+const droneNavLinks = [
+  { label: "Как работает", href: "#article" },
+  { label: "Видео", href: "#video" },
+  { label: "Цена", href: "#price" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Контакты", href: "#contacts" },
+];
+
 const HERO_IMAGE = "/assets/drone-hero.webp";
 const HERO_IMAGE_ABSOLUTE = "https://pozhdozor.ru/assets/drone-hero.webp";
 const TOWER_IMAGE = "/assets/drone-tower.webp";
@@ -279,6 +287,8 @@ export default function DroneDefense() {
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         onCallbackOpen={() => setCallbackOpen(true)}
+        links={droneNavLinks}
+        basePath="/drone-defense"
       />
 
       {/* ГЕРОЙ */}
@@ -308,7 +318,7 @@ export default function DroneDefense() {
       </section>
 
       {/* СТАТЬЯ */}
-      <section id="article" className="py-20 bg-white">
+      <section id="article" className="py-20 bg-white scroll-mt-16">
         <div ref={articleObs.ref} className="max-w-3xl mx-auto px-4 lg:px-8">
           <div className={`text-center mb-10 ${articleObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
             <div className="inline-flex items-center gap-2 text-[var(--blue)] text-sm font-semibold uppercase tracking-wider mb-3">
@@ -360,7 +370,7 @@ export default function DroneDefense() {
                   )}
                 </div>
               ))}
-              <div className="mt-10 pt-10 border-t border-gray-100">
+              <div id="video" className="mt-10 pt-10 border-t border-gray-100 scroll-mt-24">
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-[var(--dark)] mb-4">Видео: пожаротушение в работе</h3>
                 <div className="rounded-xl overflow-hidden bg-black">
                   <video
@@ -474,7 +484,7 @@ export default function DroneDefense() {
       </section>
 
       {/* ХАРАКТЕРИСТИКИ */}
-      <section className="py-20 bg-[#0a1628]">
+      <section id="price" className="py-20 bg-[#0a1628] scroll-mt-16">
         <div ref={specsObs.ref} className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className={`text-center mb-14 ${specsObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
             <div className="inline-flex items-center gap-2 text-[var(--blue-light)] text-sm font-semibold uppercase tracking-wider mb-3">
@@ -559,7 +569,7 @@ export default function DroneDefense() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 bg-gray-50">
+      <section id="faq" className="py-20 bg-gray-50 scroll-mt-16">
         <div ref={faqObs.ref} className="max-w-3xl mx-auto px-4 lg:px-8">
           <div className={`text-center mb-14 ${faqObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
             <div className="inline-flex items-center gap-2 text-[var(--blue)] text-sm font-semibold uppercase tracking-wider mb-3">

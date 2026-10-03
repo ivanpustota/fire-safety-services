@@ -7,6 +7,8 @@ interface IsmHeaderProps {
   menuOpen: boolean;
   setMenuOpen: (v: boolean) => void;
   onCallbackOpen: () => void;
+  links?: { label: string; href: string }[];
+  basePath?: string;
 }
 
 function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
@@ -18,7 +20,7 @@ function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
   }
 }
 
-export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackOpen }: IsmHeaderProps) {
+export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackOpen, links = navLinks, basePath = "/" }: IsmHeaderProps) {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(26,95,180,0.1)]" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between lg:h-20 py-3 lg:py-0">
@@ -49,8 +51,8 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
           <Link to="/drone-defense" className={`btn-blink-red px-3 py-1.5 text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
             Защита от БПЛА
           </Link>
-          {navLinks.map((l) => (
-            <Link key={l.href} to={`/${l.href}`} onClick={(e) => handleNavClick(e, l.href)} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
+          {links.map((l) => (
+            <Link key={l.href} to={`${basePath}${l.href}`} onClick={(e) => handleNavClick(e, l.href)} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
               {l.label}
             </Link>
           ))}
@@ -88,10 +90,10 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
           <Link to="/drone-defense" onClick={() => setMenuOpen(false)} className="btn-blink-red block mx-6 my-2 px-4 py-3 text-center text-[var(--dark)] font-medium">
             Защита от БПЛА
           </Link>
-          {navLinks.map((l) => (
+          {links.map((l) => (
             <Link
               key={l.href}
-              to={`/${l.href}`}
+              to={`${basePath}${l.href}`}
               onClick={(e) => { handleNavClick(e, l.href); setMenuOpen(false); }}
               className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors"
             >
