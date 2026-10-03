@@ -446,10 +446,6 @@ export default function DroneDefense() {
               <div className="rounded-2xl overflow-hidden h-[280px] sm:h-[380px] lg:h-[420px]">
                 <img src={CONTAINER_BLOCK_IMAGE} alt="Насосная станция внутри 40-футового контейнера с ёмкостью для воды и дизельным насосом" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-[var(--blue-dark)] text-white rounded-2xl p-5 shadow-2xl max-w-[220px] hidden sm:block">
-                <div className="font-display font-black text-3xl mb-1">40 фут.</div>
-                <div className="text-blue-200 text-sm">насосная станция в контейнере</div>
-              </div>
             </div>
             <div>
               <div className="inline-flex items-center gap-2 text-[var(--blue)] text-sm font-semibold uppercase tracking-wider mb-3">
