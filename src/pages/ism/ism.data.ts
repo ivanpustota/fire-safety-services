@@ -1,3 +1,4 @@
+import { withUtm } from "@/lib/utm";
 export const SEND_URL = "https://functions.poehali.dev/6dd07b4a-af2f-481a-b26d-adbf5ebe7a0b";
 export const ISM_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/790384c5-0086-4312-95b9-ab675381f276.jpg";
 export const MONTAZH_IMAGE = "https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/files/bcbeb4b0-58b1-4df4-8045-320330c10235.jpg";
@@ -99,7 +100,7 @@ export const faqs = [
 export type FormState = "idle" | "loading" | "success" | "error";
 
 export async function sendLead(data: { name: string; phone: string; object_type: string; comment: string; source: string }) {
-  const res = await fetch(SEND_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+  const res = await fetch(SEND_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...data, source: withUtm(data.source) }) });
   if (!res.ok) throw new Error();
   return res.json();
 }

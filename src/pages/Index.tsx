@@ -1,3 +1,4 @@
+import { withUtm } from "@/lib/utm";
 import { useState, useEffect, useRef } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -179,7 +180,7 @@ async function sendLead(data: { name: string; phone: string; object_type: string
   const res = await fetch(SEND_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
+    body: JSON.stringify({ ...data, source: withUtm(data.source) }),
   });
   if (!res.ok) throw new Error("Ошибка отправки");
   return res.json();
