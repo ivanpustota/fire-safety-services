@@ -62,7 +62,8 @@ const timeline = [
   { icon: "Repeat", title: "15 минут автономно + пополнение", desc: "Запас воды рассчитан на 15 минут работы, далее возможно пополнение из гидранта, скважины или водоёма" },
 ];
 
-const ARTICLE_IMAGE_CONTAINER = "/assets/drone-container-pump-v2.webp";
+const ARTICLE_IMAGE_CONTAINER = "/assets/drone-container-40.webp";
+const CONTAINER_BLOCK_IMAGE = "/assets/drone-container-pump-v2.webp";
 const ARTICLE_IMAGE_TOWER = "/assets/drone-architecture.webp";
 const ROOF_FIRE_IMAGE = "/assets/drone-roof-fire.webp";
 const ARTICLE_IMAGE_CONTROL = "/assets/drone-control.webp";
@@ -86,7 +87,8 @@ const articleSections = [
   {
     title: "Насосная станция в контейнере",
     image: ARTICLE_IMAGE_CONTAINER,
-    imageAlt: "Насосная станция внутри 40-футового контейнера с ёмкостью для воды и дизельным насосом",
+    imageAlt: "Схема: 40-футовый контейнер с насосной установкой и вышки с лафетными стволами на складе",
+    imageFull: true,
     paragraphs: [
       "Основа системы — стандартный 40-футовый морской контейнер, оборудованный под насосную станцию.",
     ],
@@ -442,7 +444,7 @@ export default function DroneDefense() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="relative">
               <div className="rounded-2xl overflow-hidden h-[280px] sm:h-[380px] lg:h-[420px]">
-                <img src={HERO_IMAGE} alt="40-футовый контейнер с насосной установкой рядом со зданием для тушения пожара на кровле" width={1600} height={900} className="w-full h-full object-cover object-left" />
+                <img src={CONTAINER_BLOCK_IMAGE} alt="Насосная станция внутри 40-футового контейнера с ёмкостью для воды и дизельным насосом" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-[var(--blue-dark)] text-white rounded-2xl p-5 shadow-2xl max-w-[220px] hidden sm:block">
                 <div className="font-display font-black text-3xl mb-1">40 фут.</div>
