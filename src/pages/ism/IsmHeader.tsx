@@ -11,12 +11,13 @@ interface IsmHeaderProps {
   basePath?: string;
 }
 
-function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string, basePath: string) {
   const id = href.replace("#", "");
   const el = document.getElementById(id);
   if (el) {
     e.preventDefault();
     el.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", `${basePath}${href}`);
   }
 }
 
@@ -52,7 +53,7 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
             Защита от БПЛА
           </Link>
           {links.map((l) => (
-            <Link key={l.href} to={`${basePath}${l.href}`} onClick={(e) => handleNavClick(e, l.href)} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
+            <Link key={l.href} to={`${basePath}${l.href}`} onClick={(e) => handleNavClick(e, l.href, basePath)} className={`text-sm font-medium transition-colors whitespace-nowrap ${scrolled ? "text-[var(--dark)] hover:text-[var(--blue)]" : "text-white/90 hover:text-white"}`}>
               {l.label}
             </Link>
           ))}
@@ -94,7 +95,7 @@ export default function IsmHeader({ scrolled, menuOpen, setMenuOpen, onCallbackO
             <Link
               key={l.href}
               to={`${basePath}${l.href}`}
-              onClick={(e) => { handleNavClick(e, l.href); setMenuOpen(false); }}
+              onClick={(e) => { handleNavClick(e, l.href, basePath); setMenuOpen(false); }}
               className="block px-6 py-3 text-[var(--dark)] font-medium hover:bg-[var(--blue-50)] hover:text-[var(--blue)] transition-colors"
             >
               {l.label}

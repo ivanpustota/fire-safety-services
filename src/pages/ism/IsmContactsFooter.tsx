@@ -70,7 +70,7 @@ export default function IsmContactsFooter({
   return (
     <>
       {/* КОНТАКТЫ */}
-      <section id="contacts" className="py-20 bg-white">
+      <section id="contacts" className="py-20 bg-white scroll-mt-16">
         <div ref={contactsObs.ref} className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className={`text-center mb-14 ${contactsObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
             <div className="inline-flex items-center gap-2 text-[var(--blue)] text-sm font-semibold uppercase tracking-wider mb-3">
