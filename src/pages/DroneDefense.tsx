@@ -44,6 +44,13 @@ const advantages = [
   { icon: "ScanEye", title: "Полностью автоматическая работа", desc: "В топовой комплектации лафетные стволы оснащены датчиками пламени: они самостоятельно обнаруживают возгорание, запускают насосную станцию и направляют струю воды в очаг без участия оператора." },
 ];
 
+const normativeItems = [
+  { icon: "ShieldCheck", text: "Система классифицирована как автономная установка пожаротушения по ТР ЕАЭС 043/2017" },
+  { icon: "BadgeCheck", text: "Компоненты сертифицированы по ТР ЕАЭС 043/2017" },
+  { icon: "Ruler", text: "Проектирование по СП 485.1311500, СП 486.1311500, ГОСТ Р 59636-2021" },
+  { icon: "FileText", text: "Для внедрения разрабатываются СТУ, согласуемые с МЧС России" },
+];
+
 const specs = [
   { icon: "Container", label: "Контейнер", value: "40 футов утеплённый", sub: "с подогреваемой ёмкостью 40 кубов" },
   { icon: "Thermometer", label: "Температура эксплуатации", value: "до −40 °C", sub: "" },
@@ -205,6 +212,7 @@ export default function DroneDefense() {
   const articleObs = useInView(0.1);
   const advObs = useInView(0.1);
   const specsObs = useInView(0.1);
+  const docsObs = useInView(0.1);
   const architectureObs = useInView(0.1);
   const timelineObs = useInView(0.1);
   const faqObs = useInView(0.1);
@@ -508,6 +516,30 @@ export default function DroneDefense() {
                   <div className="font-display font-bold text-white text-lg leading-tight">{s.value}</div>
                   <div className="text-white/50 text-xs mt-0.5">{s.sub}</div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ДОКУМЕНТЫ И НОРМАТИВНАЯ БАЗА */}
+      <section className="py-20 bg-white">
+        <div ref={docsObs.ref} className="max-w-4xl mx-auto px-4 lg:px-8">
+          <div className={`text-center mb-10 ${docsObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="inline-flex items-center gap-2 text-[var(--blue)] text-sm font-semibold uppercase tracking-wider mb-3">
+              <div className="section-divider w-8" />
+              Нормативы
+              <div className="section-divider w-8" />
+            </div>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[var(--dark)]">Документы и нормативная база</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {normativeItems.map((n, i) => (
+              <div key={i} className={`flex items-start gap-4 bg-gray-50 border border-gray-100 rounded-2xl px-5 py-5 ${docsObs.inView ? `animate-fade-in-up delay-${i * 100}` : "opacity-0"}`}>
+                <div className="w-11 h-11 bg-[var(--blue)] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon name={n.icon} fallback="FileText" size={20} className="text-white" />
+                </div>
+                <p className="text-[var(--dark)] leading-relaxed">{n.text}</p>
               </div>
             ))}
           </div>
