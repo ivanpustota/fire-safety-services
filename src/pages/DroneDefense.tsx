@@ -379,6 +379,14 @@ export default function DroneDefense() {
                   {s.footer && (
                     <p className="text-[var(--gray)] leading-relaxed mt-4 border-l-2 border-[var(--blue)] pl-4">{s.footer}</p>
                   )}
+                  {s.title === "Заключение" && (
+                    <div className="mt-6">
+                      <a href="#contacts" className="inline-flex items-center gap-2 px-6 py-3.5 bg-[var(--blue)] text-white font-bold rounded-xl hover:bg-[var(--blue-dark)] transition-colors text-base">
+                        <Icon name="Calculator" size={18} />
+                        Получить расчёт
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
               <div id="video" className="mt-10 pt-10 border-t border-gray-100 scroll-mt-24">
@@ -518,6 +526,12 @@ export default function DroneDefense() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <a href="#contacts" className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[var(--blue-dark)] font-bold rounded-xl hover:bg-blue-50 transition-colors text-base">
+              <Icon name="Calculator" size={18} />
+              Получить расчёт
+            </a>
           </div>
         </div>
       </section>
