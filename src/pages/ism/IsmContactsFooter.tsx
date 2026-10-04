@@ -31,6 +31,7 @@ interface IsmContactsFooterProps {
   setCallbackPhone: (v: string) => void;
   callbackState: FormState;
   setCallbackState: (v: FormState) => void;
+  formPromise?: string;
 }
 
 export default function IsmContactsFooter({
@@ -43,6 +44,7 @@ export default function IsmContactsFooter({
   callbackOpen, setCallbackOpen,
   callbackPhone, setCallbackPhone,
   callbackState, setCallbackState,
+  formPromise,
 }: IsmContactsFooterProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -86,6 +88,14 @@ export default function IsmContactsFooter({
             <div className={`${contactsObs.inView ? "animate-fade-in-left" : "opacity-0"}`}>
               <div className="bg-[var(--gray-light)] rounded-2xl p-4 sm:p-8 h-full flex flex-col">
                 <h3 className="font-display font-bold text-xl text-[var(--dark)] mb-6">Оставить заявку</h3>
+                {formPromise && (
+                  <div className="flex items-center gap-3 bg-white border border-[var(--blue)]/30 rounded-xl px-4 py-3 mb-6">
+                    <div className="w-9 h-9 bg-[var(--blue)] rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name="Calculator" size={18} className="text-white" />
+                    </div>
+                    <span className="font-display font-bold text-[var(--dark)]">{formPromise}</span>
+                  </div>
+                )}
                 {formState === "success" ? (
                   <div className="text-center py-10">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">

@@ -221,7 +221,7 @@ export default function DroneDefense() {
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       <Helmet>
-        <title>Активная защита кровли от БПЛА | ПожДозор</title>
+        <title>Пожаротушение кровли от пожара при падении БПЛА | ПожДозор</title>
         <meta
           name="description"
           content="Активная защита кровли от пожара и последствий падения БПЛА. Автономная контейнерная установка пожаротушения: дальность струи до 80 метров, независимость от электросети объекта."
@@ -234,7 +234,7 @@ export default function DroneDefense() {
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:url" content="https://pozhdozor.ru/drone-defense" />
-        <meta property="og:title" content="Активная защита кровли от БПЛА | ПожДозор" />
+        <meta property="og:title" content="Пожаротушение кровли от пожара при падении БПЛА | ПожДозор" />
         <meta
           property="og:description"
           content="Активная защита кровли от пожара и последствий падения БПЛА. Дальность струи до 80 метров, полная энергонезависимость."
@@ -244,7 +244,7 @@ export default function DroneDefense() {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Активная защита кровли от БПЛА — установка для тушения крыши" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Активная защита кровли от БПЛА | ПожДозор" />
+        <meta name="twitter:title" content="Пожаротушение кровли от пожара при падении БПЛА | ПожДозор" />
         <meta
           name="twitter:description"
           content="Активная защита кровли от пожара и последствий падения БПЛА. Дальность струи до 80 метров."
@@ -659,6 +659,7 @@ export default function DroneDefense() {
         callbackOpen={callbackOpen} setCallbackOpen={setCallbackOpen}
         callbackPhone={callbackPhone} setCallbackPhone={setCallbackPhone}
         callbackState={callbackState} setCallbackState={setCallbackState}
+        formPromise="Расчёт стоимости за 1 день"
       />
     </div>
   );
