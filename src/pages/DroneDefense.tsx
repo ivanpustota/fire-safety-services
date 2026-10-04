@@ -644,7 +644,7 @@ export default function DroneDefense() {
           </p>
           <a href="#contacts" className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[var(--blue-dark)] font-bold rounded-xl hover:bg-blue-50 transition-colors text-base">
             <Icon name="FileText" size={18} />
-            Получить техническую документацию
+            Получить расчёт
           </a>
         </div>
       </section>
