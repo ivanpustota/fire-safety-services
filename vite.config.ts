@@ -1,6 +1,7 @@
 import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import fs from "fs";
 import {componentTagger} from "pp-tagger";
 
 // HMR-сокет превью рвёт инфраструктура: ingress-nginx на каждом reload
@@ -100,11 +101,44 @@ const hmrKeepalive = {
     transformIndexHtml: () => [{tag: 'script', children: hmrClient, injectTo: 'head-prepend' as const}],
 };
 
+const staticPages = [
+    {
+        path: 'drone-defense',
+        title: 'Пожаротушение кровли от пожара при падении БПЛА | ПожДозор',
+        description: 'Активная защита кровли от пожара и последствий падения БПЛА. Автономная контейнерная установка пожаротушения: дальность струи до 80 метров, независимость от электросети объекта.',
+        url: 'https://pozhdozor.ru/drone-defense',
+    },
+];
+
+const staticPagesMeta = {
+    name: 'static-pages-meta',
+    apply: 'build' as const,
+    closeBundle() {
+        const dist = path.resolve(__dirname, 'dist');
+        const src = path.join(dist, 'index.html');
+        if (!fs.existsSync(src)) return;
+        const html = fs.readFileSync(src, 'utf-8');
+        for (const page of staticPages) {
+            const out = html
+                .replace(/<title>[\s\S]*?<\/title>/, `<title>${page.title}</title>`)
+                .replace(/(<meta name="description" content=")[^"]*(")/, `$1${page.description}$2`)
+                .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${page.url}$2`)
+                .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${page.url}$2`)
+                .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${page.title}$2`)
+                .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${page.description}$2`);
+            const dir = path.join(dist, page.path);
+            fs.mkdirSync(dir, {recursive: true});
+            fs.writeFileSync(path.join(dir, 'index.html'), out);
+        }
+    },
+};
+
 // https://vitejs.dev/config/
 export default defineConfig(({mode}) => ({
     plugins: [
         react(),
         hmrKeepalive,
+        staticPagesMeta,
         mode === 'development' &&
         componentTagger(),
     ].filter(Boolean),
