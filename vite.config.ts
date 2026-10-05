@@ -106,7 +106,7 @@ const staticPages = [
         path: slug,
         title: 'Услуги пожарной безопасности: монтаж, ТО, мониторинг | ПожДозор',
         description: 'Монтаж, техническое обслуживание и круглосуточный мониторинг пожарной сигнализации, видеонаблюдения и СКУД в Москве. Лицензия МЧС России, выезд инженера — бесплатно.',
-        url: 'https://pozhdozor.ru/montazh',
+        url: `https://pozhdozor.ru/${slug}`,
     })),
     {
         path: 'drone-defense',
@@ -128,7 +128,8 @@ const staticPagesMeta = {
             const out = html
                 .replace(/<title>[\s\S]*?<\/title>/, `<title>${page.title}</title>`)
                 .replace(/(<meta name="description" content=")[^"]*(")/, `$1${page.description}$2`)
-                .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${page.url}$2`)
+                .replace(/<link rel="canonical"[^>]*>\s*/g, '')
+                .replace('</title>', `</title>\n    <link rel="canonical" href="${page.url}"/>`)
                 .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${page.url}$2`)
                 .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${page.title}$2`)
                 .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${page.description}$2`);
