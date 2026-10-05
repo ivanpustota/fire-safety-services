@@ -1,6 +1,6 @@
 import { withUtm } from "@/lib/utm";
 import { useState, useEffect, useRef } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Icon from "@/components/ui/icon";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -246,8 +246,7 @@ export default function Index() {
   const faqObs = useInView(0.1);
   const contactsObs = useInView(0.1);
 
-  const { pathname } = useLocation();
-  const canonicalUrl = `https://pozhdozor.ru${pathname === "/" ? "" : pathname}`;
+  const canonicalUrl = "https://pozhdozor.ru/montazh";
 
   return (
     <div className="min-h-screen bg-white font-body">
