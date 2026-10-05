@@ -81,6 +81,7 @@ const ARTICLE_IMAGE_CONTAINER = "/assets/drone-container-40.webp";
 const CONTAINER_BLOCK_IMAGE = "/assets/drone-container-pump-v2.webp";
 const ARTICLE_IMAGE_TOWER = "/assets/drone-architecture.webp";
 const ROOF_FIRE_IMAGE = "/assets/drone-roof-fire.webp";
+const ARTICLE_IMAGE_SCHEME = "/assets/drone-scheme-no-fire.webp";
 const ARTICLE_IMAGE_CONTROL = "/assets/drone-control.webp";
 
 const droneFaqs = [
@@ -180,6 +181,15 @@ const articleSections = [
         "Полностью автоматическая работа в топовой комплектации: лафетные стволы с датчиками пламени сами определяют возгорание, запускают насосную станцию и направляют струю воды в очаг без участия оператора.",
       ],
     },
+  },
+  {
+    title: "Схема защиты склада",
+    image: ARTICLE_IMAGE_SCHEME,
+    imageAlt: "Схема: контейнер с насосной установкой, магистраль 100 мм и лафетные стволы на площадках лестниц подают воду на кровлю склада",
+    imageFull: true,
+    paragraphs: [
+      "Контейнер с насосной установкой подаёт воду по магистрали диаметром 100 мм к двум пожарным лестницам на расстоянии 70 м друг от друга. Лафетные стволы на площадках лестниц направляют струю на кровлю склада высотой 20 м.",
+    ],
   },
   {
     title: "Заключение",
