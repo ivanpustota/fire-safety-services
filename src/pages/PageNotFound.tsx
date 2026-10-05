@@ -11,16 +11,26 @@ const PageNotFound = () => {
       location.pathname
     );
 
-    const meta = document.createElement("meta");
-    meta.name = "robots";
-    meta.content = "noindex, nofollow";
-    document.head.appendChild(meta);
+    const metas = ["robots", "yandex", "googlebot"].map((name) => {
+      const meta = document.createElement("meta");
+      meta.name = name;
+      meta.content = "noindex, nofollow";
+      document.head.appendChild(meta);
+      return meta;
+    });
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const prevCanonical = canonical?.getAttribute("href") ?? null;
+    canonical?.remove();
 
     const prevTitle = document.title;
     document.title = "Страница не найдена — ПожДозор";
 
     return () => {
-      document.head.removeChild(meta);
+      metas.forEach((m) => m.remove());
+      if (canonical && prevCanonical) {
+        canonical.setAttribute("href", prevCanonical);
+        document.head.appendChild(canonical);
+      }
       document.title = prevTitle;
     };
   }, [location.pathname]);
