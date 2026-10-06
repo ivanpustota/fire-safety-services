@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
 import {componentTagger} from "pp-tagger";
+import {specs as droneSpecs, droneFaqs} from "./src/pages/drone/droneStatic.data";
 import {droneProtectionArticle} from "./src/pages/drone/droneProtectionArticle.data";
 
 // HMR-сокет превью рвёт инфраструктура: ingress-nginx на каждом reload
@@ -134,7 +135,9 @@ const droneArticleHtml = () => {
             parts.push(`<table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>`);
         }
     }
-    return `<article>${parts.join('')}</article>`;
+    const specsHtml = `<section><h2>Технические параметры и стоимость установки</h2><ul>${droneSpecs.map((x) => `<li>${esc(x.label)}: ${esc(x.value)}${x.sub ? ', ' + esc(x.sub) : ''}</li>`).join('')}</ul></section>`;
+    const faqHtml = `<section><h2>Вопросы о защите предприятия и кровли от БПЛА</h2>${droneFaqs.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join('')}</section>`;
+    return `<article>${parts.join('')}</article>${specsHtml}${faqHtml}`;
 };
 
 const staticPagesMeta = {
