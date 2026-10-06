@@ -428,7 +428,7 @@ export default function DroneDefense() {
               Архитектура защиты
               <div className="section-divider w-8" />
             </div>
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[var(--dark)] mb-4">Вышки и лафетные стволы для тушения кровли</h2>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[var(--dark)] mb-4">Защита от БПЛА и дронов: какие системы существуют и почему пожаротушение кровли становится новым стандартом</h2>
             <p className="text-[var(--gray)] max-w-2xl mx-auto">
               В отличие от систем, где вода подаётся изнутри здания, в данной установке подача организована снаружи — по периметру объекта размещаются вышки с гидромониторами.
             </p>
