@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
 import {componentTagger} from "pp-tagger";
+import {droneProtectionArticle} from "./src/pages/drone/droneProtectionArticle.data";
 
 // HMR-сокет превью рвёт инфраструктура: ingress-nginx на каждом reload
 // конфига (захват/освобождение любого dev-пода) через 30 с закрывает все
@@ -110,11 +111,31 @@ const staticPages = [
     })),
     {
         path: 'drone-defense',
-        title: 'Пожаротушение кровли от пожара при падении БПЛА | ПожДозор',
-        description: 'Активная защита кровли от пожара и последствий падения БПЛА. Автономная контейнерная установка пожаротушения: дальность струи до 80 метров, независимость от электросети объекта.',
+        title: 'Защита предприятия и склада от БПЛА: пожаротушение кровли | ПожДозор',
+        description: 'Активная защита кровли склада и предприятия от пожара при падении БПЛА. Автономная контейнерная установка пожаротушения: дальность струи до 80 метров, независимость от электросети.',
         url: 'https://pozhdozor.ru/drone-defense',
     },
 ];
+
+const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const clean = (t: string) => esc(t.replace(/\*\*/g, '').replace(/\[(\d+)\]\(https?:\/\/[^)]+\)/g, ''));
+
+const droneArticleHtml = () => {
+    const parts = [`<h1>Защита предприятия и склада от БПЛА: пожаротушение кровли</h1>`, `<h2>${clean(droneProtectionArticle.title)}</h2>`];
+    for (const b of droneProtectionArticle.blocks) {
+        if (b.type === 'h3' || b.type === 'h4' || b.type === 'p') {
+            const tag = b.type === 'p' ? 'p' : b.type;
+            parts.push(`<${tag}>${clean(b.text)}</${tag}>`);
+        } else if (b.type === 'ul' || b.type === 'ol') {
+            parts.push(`<${b.type}>${b.items.map((i) => `<li>${clean(i)}</li>`).join('')}</${b.type}>`);
+        } else if (b.type === 'table') {
+            const head = b.head.map((h) => `<th>${clean(h)}</th>`).join('');
+            const rows = b.rows.map((r) => `<tr>${r.map((c) => `<td>${clean(c)}</td>`).join('')}</tr>`).join('');
+            parts.push(`<table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table>`);
+        }
+    }
+    return `<article>${parts.join('')}</article>`;
+};
 
 const staticPagesMeta = {
     name: 'static-pages-meta',
@@ -133,9 +154,12 @@ const staticPagesMeta = {
                 .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${page.url}$2`)
                 .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${page.title}$2`)
                 .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${page.description}$2`);
+            const final = page.path === 'drone-defense'
+                ? out.replace('<div id="root"></div>', `<div id="root">${droneArticleHtml()}</div>`)
+                : out;
             const dir = path.join(dist, page.path);
             fs.mkdirSync(dir, {recursive: true});
-            fs.writeFileSync(path.join(dir, 'index.html'), out);
+            fs.writeFileSync(path.join(dir, 'index.html'), final);
         }
     },
 };
