@@ -234,20 +234,20 @@ export default function DroneDefense() {
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       <Helmet>
-        <title>Пожаротушение кровли от пожара при падении БПЛА | ПожДозор</title>
+        <title>Защита предприятия и склада от БПЛА: пожаротушение кровли | ПожДозор</title>
         <meta
           name="description"
           content="Активная защита кровли склада и предприятия от пожара при падении БПЛА. Автономная контейнерная установка пожаротушения: дальность струи до 80 метров, независимость от электросети."
         />
         <meta
           name="keywords"
-          content="активная защита кровли от пожара, тушение крыши, тушение пожара на крыше склада, защита предприятия от БПЛА, активная защита от дроновой атаки, защита кровли от БПЛА, пожаротушение при падении беспилотника, автономная установка пожаротушения, контейнерная насосная станция, лафетный ствол пожаротушения, защита склада от дрона, пожарная вышка гидромонитор"
+          content="активная защита кровли от пожара, тушение крыши, тушение пожара на крыше склада, защита предприятия от БПЛА, защита предприятия от дронов, пожаротушение на предприятии при атаке БПЛА, защита складов и промышленных предприятий, активная защита от дроновой атаки, защита кровли от БПЛА, пожаротушение при падении беспилотника, автономная установка пожаротушения, контейнерная насосная станция, лафетный ствол пожаротушения, защита склада от дрона, пожарная вышка гидромонитор"
         />
         <link rel="canonical" href="https://pozhdozor.ru/drone-defense" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:url" content="https://pozhdozor.ru/drone-defense" />
-        <meta property="og:title" content="Пожаротушение кровли от пожара при падении БПЛА | ПожДозор" />
+        <meta property="og:title" content="Защита предприятия и склада от БПЛА: пожаротушение кровли | ПожДозор" />
         <meta
           property="og:description"
           content="Защита кровли предприятия и склада от пожара при падении БПЛА. Дальность струи до 80 метров, полная энергонезависимость."
@@ -255,9 +255,9 @@ export default function DroneDefense() {
         <meta property="og:image" content={HERO_IMAGE_ABSOLUTE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Активная защита кровли от БПЛА — установка для тушения крыши" />
+        <meta property="og:image:alt" content="Активная защита кровли предприятия и склада от БПЛА — установка для тушения крыши" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Пожаротушение кровли от пожара при падении БПЛА | ПожДозор" />
+        <meta name="twitter:title" content="Защита предприятия и склада от БПЛА: пожаротушение кровли | ПожДозор" />
         <meta
           name="twitter:description"
           content="Защита кровли предприятия и склада от пожара при падении БПЛА. Дальность струи до 80 метров."
@@ -267,7 +267,7 @@ export default function DroneDefense() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Активная защита кровли от пожара и дроновой атаки",
+            name: "Активная защита кровли предприятия и склада от пожара и дроновой атаки",
             description:
               "Автономная контейнерная установка для тушения кровли предприятия — активная защита от последствий падения БПЛА и возгорания. Дальность струи 60–80 метров, независимость от электроснабжения объекта за счёт дизельного насоса.",
             provider: {
@@ -319,13 +319,13 @@ export default function DroneDefense() {
         <div ref={heroObs.ref} className="relative z-10 w-full max-w-5xl mx-auto px-4 lg:px-8 py-16 text-center">
           <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/80 text-sm font-medium mb-6 ${heroObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
             <div className="w-2 h-2 bg-blue-400 rounded-full" />
-            Активная защита кровли для объектов с угрозой БПЛА
+            Активная защита кровли предприятий и складов с угрозой БПЛА
           </div>
           <h1 className={`font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6 ${heroObs.inView ? "animate-fade-in-up delay-100" : "opacity-0"}`}>
-            Активная защита кровли от пожара, вызванного падением БПЛА
+            Активная защита кровли предприятия от пожара, вызванного падением БПЛА
           </h1>
           <p className={`text-base sm:text-lg text-white/85 font-medium leading-relaxed mb-8 max-w-3xl mx-auto ${heroObs.inView ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-            Автономная контейнерная установка пожаротушения для кровли: подача воды в очаг возгорания после падения БПЛА, независимо от электросети и несущих конструкций объекта.
+            Автономная контейнерная установка пожаротушения для кровли предприятия: подача воды в очаг возгорания после падения БПЛА, независимо от электросети и несущих конструкций объекта.
           </p>
           <div className={`flex flex-col sm:flex-row gap-3 justify-center ${heroObs.inView ? "animate-fade-in-up delay-300" : "opacity-0"}`}>
             <a href="#contacts" className="px-6 py-3.5 bg-[var(--blue)] text-white font-bold rounded-xl hover:bg-[var(--blue-dark)] transition-all text-center text-base">
@@ -641,7 +641,7 @@ export default function DroneDefense() {
               FAQ
               <div className="section-divider w-8" />
             </div>
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[var(--dark)] mb-4">Вопросы о защите кровли от БПЛА</h2>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-[var(--dark)] mb-4">Вопросы о защите предприятия и кровли от БПЛА</h2>
             <p className="text-[var(--gray)]">Отвечаем на частые вопросы о тушении крыши и активной защите от дроновой атаки</p>
           </div>
           <div className="space-y-3">
@@ -666,7 +666,7 @@ export default function DroneDefense() {
       <section className="py-16 bg-[var(--blue-dark)]">
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
           <h2 className="font-display font-extrabold text-2xl md:text-3xl text-white mb-4">
-            Дополнительная защита кровли объекта
+            Дополнительная защита кровли предприятия и склада
           </h2>
           <p className="text-blue-100 leading-relaxed mb-8">
             Контейнерная установка пожаротушения дополняет существующие системы пожарной безопасности и обеспечивает подачу воды на кровлю при возгорании, вызванном падением БПЛА, независимо от состояния инженерных систем здания.
