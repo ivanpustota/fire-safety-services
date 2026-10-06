@@ -4,6 +4,8 @@ import Icon from "@/components/ui/icon";
 import IsmHeader from "./ism/IsmHeader";
 import IsmContactsFooter from "./ism/IsmContactsFooter";
 import { FormState } from "./ism/ism.data";
+import CollapsibleArticle from "./drone/CollapsibleArticle";
+import { droneProtectionArticle } from "./drone/droneProtectionArticle.data";
 
 const droneNavLinks = [
   { label: "Как работает", href: "#article" },
@@ -475,6 +477,7 @@ export default function DroneDefense() {
               </div>
             </div>
           </div>
+          <CollapsibleArticle title={droneProtectionArticle.title} blocks={droneProtectionArticle.blocks} />
         </div>
       </section>
 
