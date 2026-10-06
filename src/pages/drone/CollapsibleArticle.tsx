@@ -95,7 +95,7 @@ export default function CollapsibleArticle({ title, blocks }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <article className="mt-12 bg-white rounded-2xl border border-gray-100 shadow-sm">
+    <article className="mt-2 bg-white rounded-2xl border border-gray-100 shadow-sm">
       <div className="p-5 sm:p-6 flex items-start justify-between gap-4">
         <h3 className="font-display font-bold text-lg sm:text-xl text-[var(--dark)] leading-snug">{title}</h3>
         <button
