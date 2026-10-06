@@ -341,7 +341,7 @@ export default function DroneDefense() {
       {/* СТАТЬЯ */}
       <section id="article" className="py-20 bg-white scroll-mt-16">
         <div ref={articleObs.ref} className="max-w-3xl mx-auto px-4 lg:px-8">
-          <div className={`text-center mb-10 ${articleObs.inView ? "animate-fade-in-up" : "opacity-0"}`}>
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 text-[var(--blue)] text-sm font-semibold uppercase tracking-wider mb-3">
               <div className="section-divider w-8" />
               Статья
@@ -351,7 +351,7 @@ export default function DroneDefense() {
               Активная защита кровли: комплекс пожаротушения для объектов с угрозой БПЛА
             </h2>
           </div>
-          <div className={`prose-drone ${articleObs.inView ? "animate-fade-in-up delay-100" : "opacity-0"}`}>
+          <div className="prose-drone">
             <p className="text-[var(--gray)] leading-relaxed mb-4 border-l-4 border-[var(--blue)] bg-gray-50 pl-4 py-3 pr-3 rounded-r-lg">
               <strong className="text-[var(--dark)]">Указ Президента РФ от 24.08.2026 № 604 «О мерах по обеспечению безопасности объектов критической инфраструктуры Российской Федерации».</strong> Собственники таких объектов обязаны обеспечить их защиту, в том числе от атак БПЛА. Если меры защиты не приняты или неэффективны, Правительство вправе ввести временное управление имуществом.
             </p>
