@@ -27,7 +27,7 @@ function useInView(threshold = 0.1) {
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setInView(true); },
-      { threshold }
+      { threshold: 0, rootMargin: "0px 0px -5% 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -406,7 +406,7 @@ export default function DroneDefense() {
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-[var(--dark)] mb-4">Видео: пожаротушение в работе</h3>
                 <div className="rounded-xl overflow-hidden bg-black">
                   <video
-                    src="https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/ffde3bc6-24bc-4306-a820-e5494ef5aecf.mp4"
+                    src="https://cdn.poehali.dev/projects/031d4dc8-7cba-4766-8fd9-e78f2a02f069/bucket/ffde3bc6-24bc-4306-a820-e5494ef5aecf.mp4#t=0.1"
                     controls
                     playsInline
                     preload="metadata"
