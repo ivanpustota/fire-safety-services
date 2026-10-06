@@ -653,9 +653,7 @@ export default function DroneDefense() {
                     <Icon name="Plus" size={16} />
                   </div>
                 </button>
-                {openFaq === i && (
-                  <div className="px-5 pb-5 text-[var(--gray)] leading-relaxed border-t border-gray-100 pt-4">{f.a}</div>
-                )}
+                <div className={`px-5 pb-5 text-[var(--gray)] leading-relaxed border-t border-gray-100 pt-4 ${openFaq === i ? "" : "hidden"}`}>{f.a}</div>
               </div>
             ))}
           </div>

@@ -109,8 +109,8 @@ export default function CollapsibleArticle({ title, blocks }: Props) {
           <Icon name={open ? "ChevronUp" : "ChevronDown"} size={18} />
         </button>
       </div>
-      {open && (
-        <div className="px-5 sm:px-6 pb-6">
+      {(
+        <div className={`px-5 sm:px-6 pb-6 ${open ? "" : "hidden"}`}>
           {blocks.map((b, i) => (
             <Block key={i} block={b} />
           ))}
