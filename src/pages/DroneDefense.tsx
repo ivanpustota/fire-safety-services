@@ -465,8 +465,8 @@ export default function DroneDefense() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden h-[280px] sm:h-[380px] lg:h-[420px]">
-                <img src={CONTAINER_BLOCK_IMAGE} alt="Насосная станция внутри 40-футового контейнера с ёмкостью для воды и дизельным насосом" className="w-full h-full object-cover" />
+              <div className="rounded-2xl overflow-hidden">
+                <img src={CONTAINER_BLOCK_IMAGE} alt="Насосная станция внутри 40-футового контейнера с ёмкостью для воды и дизельным насосом" className="w-full h-auto" />
               </div>
             </div>
             <div>
