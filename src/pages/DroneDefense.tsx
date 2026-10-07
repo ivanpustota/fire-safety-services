@@ -71,7 +71,7 @@ const timeline = [
 ];
 
 const ARTICLE_IMAGE_CONTAINER = "/assets/drone-container-40.webp";
-const CONTAINER_BLOCK_IMAGE = "/assets/drone-container-pump-v3.webp";
+const CONTAINER_BLOCK_IMAGE = "/assets/drone-container-user.webp";
 const ARTICLE_IMAGE_TOWER = "/assets/drone-architecture.webp";
 const ROOF_FIRE_IMAGE = "/assets/drone-roof-fire.webp";
 const ARTICLE_IMAGE_SCHEME = "/assets/drone-scheme-no-fire.webp";
