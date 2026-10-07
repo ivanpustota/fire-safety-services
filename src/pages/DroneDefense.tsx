@@ -75,7 +75,7 @@ const CONTAINER_BLOCK_IMAGE = "/assets/drone-container-pump-v3.webp";
 const ARTICLE_IMAGE_TOWER = "/assets/drone-architecture.webp";
 const ROOF_FIRE_IMAGE = "/assets/drone-roof-fire.webp";
 const ARTICLE_IMAGE_SCHEME = "/assets/drone-scheme-no-fire.webp";
-const ARTICLE_IMAGE_CONTROL = "/assets/drone-control.webp";
+const ARTICLE_IMAGE_CONTROL = "/assets/drone-control-v2.webp";
 
 
 const articleSections = [
