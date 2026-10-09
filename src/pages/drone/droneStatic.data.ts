@@ -1,7 +1,7 @@
 export const specs = [
   { icon: "Container", label: "Контейнер", value: "40 футов утеплённый", sub: "с подогреваемой ёмкостью 40 кубов" },
   { icon: "Thermometer", label: "Температура эксплуатации", value: "до −40 °C", sub: "" },
-  { icon: "Ruler", label: "Труба", value: "Сухотруб Ø 100 мм", sub: "с переходом на 80 мм, 30 м" },
+  { icon: "Ruler", label: "Труба", value: "Сухотруб Ø 160 мм", sub: "с переходом на 80 мм, 30 м" },
   { icon: "MoveVertical", label: "Высота вышки", value: "18 м", sub: "сборные секции" },
   { icon: "Waves", label: "Лафетный ствол", value: "ЛС-С60, 1 шт.", sub: "с ручным управлением" },
   { icon: "Gauge", label: "Насосная станция", value: "Гейзер МП-20/100", sub: "на основе пожарной мотопомпы" },
