@@ -2,7 +2,7 @@ import Icon from "@/components/ui/icon";
 import { ISM_IMAGE, MONTAZH_IMAGE, flowSteps, controls, results, tariffs } from "./ism.data";
 
 interface InViewObs {
-  ref: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
   inView: boolean;
 }
 

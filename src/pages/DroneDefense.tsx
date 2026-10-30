@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Helmet } from "react-helmet-async";
 import Icon from "@/components/ui/icon";
 import IsmHeader from "./ism/IsmHeader";
 import IsmContactsFooter from "./ism/IsmContactsFooter";
@@ -211,76 +210,6 @@ export default function DroneDefense() {
 
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
-      <Helmet>
-        <title>Защита предприятия и склада от БПЛА: пожаротушение кровли | ПожДозор</title>
-        <meta
-          name="description"
-          content="Активная защита кровли склада и предприятия от пожара при падении БПЛА. Автономная контейнерная установка пожаротушения: дальность струи до 80 метров, независимость от электросети."
-        />
-        <meta
-          name="keywords"
-          content="активная защита кровли от пожара, тушение крыши, тушение пожара на крыше склада, защита предприятия от БПЛА, защита предприятия от дронов, пожаротушение на предприятии при атаке БПЛА, защита складов и промышленных предприятий, активная защита от дроновой атаки, защита кровли от БПЛА, пожаротушение при падении беспилотника, автономная установка пожаротушения, контейнерная насосная станция, лафетный ствол пожаротушения, защита склада от дрона, пожарная вышка гидромонитор"
-        />
-        <link rel="canonical" href="https://pozhdozor.ru/drone-defense" />
-        <meta property="og:type" content="article" />
-        <meta property="og:locale" content="ru_RU" />
-        <meta property="og:url" content="https://pozhdozor.ru/drone-defense" />
-        <meta property="og:title" content="Защита предприятия и склада от БПЛА: пожаротушение кровли | ПожДозор" />
-        <meta
-          property="og:description"
-          content="Защита кровли предприятия и склада от пожара при падении БПЛА. Дальность струи до 80 метров, полная энергонезависимость."
-        />
-        <meta property="og:image" content={HERO_IMAGE_ABSOLUTE} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Активная защита кровли предприятия и склада от БПЛА — установка для тушения крыши" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Защита предприятия и склада от БПЛА: пожаротушение кровли | ПожДозор" />
-        <meta
-          name="twitter:description"
-          content="Защита кровли предприятия и склада от пожара при падении БПЛА. Дальность струи до 80 метров."
-        />
-        <meta name="twitter:image" content={HERO_IMAGE_ABSOLUTE} />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Активная защита кровли предприятия и склада от пожара и дроновой атаки",
-            description:
-              "Автономная контейнерная установка для тушения кровли предприятия — активная защита от последствий падения БПЛА и возгорания. Дальность струи воды 70–80 метров, пены 50–60 метров, независимость от электроснабжения объекта за счёт дизельного насоса.",
-            provider: {
-              "@type": "LocalBusiness",
-              name: "ПожДозор",
-              telephone: "+74994902201",
-              email: "skpb01@mail.ru",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "ул. 5-я Магистральная, дом 12, офис 410",
-                addressLocality: "Москва",
-                addressCountry: "RU",
-              },
-            },
-            areaServed: "Москва",
-            image: HERO_IMAGE_ABSOLUTE,
-            url: "https://pozhdozor.ru/drone-defense",
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: droneFaqs.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: f.a,
-              },
-            })),
-          })}
-        </script>
-      </Helmet>
-
       <IsmHeader
         scrolled={scrolled}
         menuOpen={menuOpen}

@@ -1,7 +1,6 @@
 import { withUtm } from "@/lib/utm";
 import { useState, useEffect, useRef } from "react";
-import { useLocation, Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Link } from "@/lib/router-compat";
 import Icon from "@/components/ui/icon";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { testimonials } from "@/pages/ism/ism.data";
@@ -246,23 +245,8 @@ export default function Index() {
   const faqObs = useInView(0.1);
   const contactsObs = useInView(0.1);
 
-  const { pathname } = useLocation();
-  const canonicalUrl = `https://pozhdozor.ru${pathname.replace(/\/+$/, "")}`;
-
   return (
     <div className="min-h-screen bg-white font-body">
-      <Helmet>
-        <title>Услуги пожарной безопасности: монтаж, ТО, мониторинг | ПожДозор</title>
-        <meta
-          name="description"
-          content="Монтаж, техническое обслуживание и круглосуточный мониторинг пожарной сигнализации, видеонаблюдения и СКУД в Москве. Лицензия МЧС России, выезд инженера — бесплатно."
-        />
-        <meta
-          name="keywords"
-          content="монтаж пожарной сигнализации, обслуживание пожарной сигнализации, активная защита кровли от пожара, тушение крыши, активная защита от дроновой атаки, защита кровли от БПЛА"
-        />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
       {/* NAVBAR */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${

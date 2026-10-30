@@ -3,7 +3,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { MONTAZH_IMAGE, CERT_IMAGE, portfolio, testimonials, certificates, faqs } from "./ism.data";
 
 interface InViewObs {
-  ref: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
   inView: boolean;
 }
 

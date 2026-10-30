@@ -9,7 +9,7 @@ interface Testimonial {
 }
 
 interface InViewObs {
-  ref: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
   inView: boolean;
 }
 

@@ -1,5 +1,4 @@
 import Icon from "@/components/ui/icon";
-import { Link } from "react-router-dom";
 import { navLinks, sendLead, FormState } from "./ism.data";
 
 const VkIcon = ({ size = 16, className = "" }: { size?: number; className?: string }) => (
@@ -9,7 +8,7 @@ const VkIcon = ({ size = 16, className = "" }: { size?: number; className?: stri
 );
 
 interface InViewObs {
-  ref: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
   inView: boolean;
 }
 
@@ -218,10 +217,10 @@ export default function IsmContactsFooter({
               <div className="font-display font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">Разделы</div>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/uslugi" reloadDocument className="text-gray-400 text-sm hover:text-[var(--blue-light)] transition-colors">Услуги</Link>
+                  <a href="/uslugi" className="text-gray-400 text-sm hover:text-[var(--blue-light)] transition-colors">Услуги</a>
                 </li>
                 <li>
-                  <Link to="/drone-defense" reloadDocument className="text-gray-400 text-sm hover:text-[var(--blue-light)] transition-colors">Защита от БПЛА</Link>
+                  <a href="/drone-defense" className="text-gray-400 text-sm hover:text-[var(--blue-light)] transition-colors">Защита от БПЛА</a>
                 </li>
                 {navLinks.map((l) => (
                   <li key={l.href}>
